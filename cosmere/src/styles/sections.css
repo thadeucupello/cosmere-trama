@@ -1841,9 +1841,36 @@
   box-shadow: 0 10px 35px rgba(0, 0, 0, .42);
 }
 
+.article-hero-visual__frame.is-document {
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(168, 48, 105, .16), transparent 48%),
+    linear-gradient(135deg, #11121a, #070910);
+}
+
+.article-hero-visual__frame.is-document .article-hero-visual__main {
+  width: min(82%, 660px);
+  height: auto;
+  max-height: calc(100% - 1.5rem);
+  object-fit: contain;
+  border: 1px solid rgba(226, 162, 191, .3);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .48);
+}
+
 @media (max-width: 680px) {
   .article-hero-visual__frame.is-contained .article-hero-visual__main {
     height: 88%;
     max-width: 68%;
+  }
+
+  .article-hero-visual__frame.is-document {
+    padding: .75rem;
+  }
+
+  .article-hero-visual__frame.is-document .article-hero-visual__main {
+    width: 96%;
+    max-height: 94%;
   }
 }

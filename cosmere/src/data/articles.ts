@@ -2,7 +2,7 @@ import type { Article, ArticleCategory } from '../types';
 import rosharWayOfKings from '../assets/editorial/roshar-way-of-kings.jpg';
 import readingStormlightArt from '../assets/editorial/reading-stormlight-art.jpg';
 import cosmereRhythmOfWar from '../assets/editorial/cosmere-rhythm-of-war.jpg';
-import mistbornWellOfAscension from '../assets/editorial/mistborn-well-of-ascension.jpg';
+import mistbornFinalEmpireMap from '../assets/editorial/mistborn-final-empire-map.jpeg';
 
 export const articleCategories: { id: 'todos' | ArticleCategory; label: string }[] = [
   { id: 'todos', label: 'Todos' },
@@ -69,12 +69,12 @@ export const articles: Article[] = [
     slug: 'mistborn-guia-scadrial',
     title: 'Mistborn: o que saber antes de entrar em Scadrial',
     eyebrow: 'Guia sem spoilers', category: 'scadrial', symbol: '●',
-    heroImage: mistbornWellOfAscension,
-    heroAlt: 'Uma nascida da bruma salta sobre as torres de uma cidade iluminada por um céu alaranjado.',
-    imageCredit: 'Danny Schlitz',
-    imageCreditUrl: 'https://www.dannyschlitz.com/work/mistborn-brandon-sanderson',
-    imageSource: 'Arte de capa de The Well of Ascension, edição de 2023',
-    heroFit: 'contain',
+    heroImage: mistbornFinalEmpireMap,
+    heroAlt: 'Mapa do Império Final, com seus domínios, cidades e cadeias de montanhas.',
+    imageCredit: 'Isaac Stewart',
+    imageCreditUrl: 'https://www.brandonsanderson.com/blogs/blog/annotation-mistborn-maps',
+    imageSource: 'Mapa do Império Final',
+    heroFit: 'document',
     excerpt: 'Cinzas, metais e uma rebelião impossível. Um guia para chegar a O Império Final sabendo apenas o necessário.',
     publishedAt: '19 de julho de 2026', readingTime: '6 min de leitura',
     relatedBookIds: ['mistborn-1', 'mistborn-2', 'mistborn-3'],
