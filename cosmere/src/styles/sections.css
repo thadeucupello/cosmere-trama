@@ -9,6 +9,13 @@
   overflow: hidden;
 }
 
+@media (min-width: 901px) {
+  .hero {
+    /* Compensa a escala de 80% aplicada ao desktop: 125% × 80% = 100%. */
+    min-height: 125svh;
+  }
+}
+
 .hero__nebula-wrap {
   position: absolute;
   inset: 0;
