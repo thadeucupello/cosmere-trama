@@ -89,13 +89,32 @@ export default function RosharSection() {
         </div>
 
         <h3 className="world-section__subheading">Relatos da Guerra das Tempestades</h3>
+        <div className="world-section__note world-section__note--expanded">
+          <p>
+            A obra mais monumental de Brandon Sanderson foi planejada em dez volumes, divididos em dois arcos de
+            cinco livros. Cada volume amplia Roshar, acompanha diferentes personagens e revela novas camadas de uma
+            guerra cujas origens atravessam milhares de anos.
+          </p>
+          <p>
+            Os cinco primeiros livros formam o arco inicial, centrado nas jornadas de Kaladin, Shallan, Dalinar,
+            Eshonai e Szeth. Embora cada volume tenha seus próprios conflitos, a história deve ser lida em ordem.
+          </p>
+          <p>
+            Em novembro de 2026, <em>Vento e Verdade</em> encerra esse primeiro grande arco. A saga continuará no
+            futuro com outros cinco volumes e uma nova etapa da história de Roshar.
+          </p>
+        </div>
         <div className="book-journey">
           {books.map((book) => (
             <div key={book.id} className={book.featured ? 'book-journey__item book-journey__item--featured' : 'book-journey__item'}>
               <BookCard book={book} />
               {book.featured && (
                 <span className="book-journey__badge">
-                  {book.status === 'coming-soon' ? 'Em breve' : 'Lançamento mais recente'}
+                  {book.id === 'stormlight-5'
+                    ? 'Novembro de 2026'
+                    : book.status === 'coming-soon'
+                      ? 'Em breve'
+                      : 'Lançamento mais recente'}
                 </span>
               )}
             </div>
