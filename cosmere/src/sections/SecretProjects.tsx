@@ -30,14 +30,33 @@ export default function SecretProjects() {
     >
       <div className="container">
         <BackToMapLink />
-        <SectionHeading eyebrow="Edições especiais" title={world.name} subtitle={world.tagline} />
+        <SectionHeading
+          eyebrow="Quatro livros. Três novos cantos do Cosmere. Uma viagem para além dele."
+          title={world.name}
+          subtitle="Cada história abre uma nova porta."
+        />
 
-        <p className="world-section__intro">
-          Quatro histórias nasceram de uma campanha que surpreendeu o mercado editorial. Cada uma é uma
-          descoberta à parte — sem spoilers, sem pressa, no seu próprio ritmo.
-        </p>
+        <div className="world-section__intro">
+          <p>
+            Durante os anos de pandemia, Brandon Sanderson fez algo que ninguém esperava: escreveu novos livros em
+            segredo. Quando revelou o projeto ao público, a campanha criada para publicá-los reuniu mais de 185 mil
+            leitores e arrecadou US$ 41,7 milhões, tornando-se o maior financiamento coletivo da história do
+            Kickstarter.
+          </p>
+          <p>
+            Dessa surpresa nasceram quatro romances independentes, cada um com sua própria atmosfera, seu próprio
+            mundo e uma identidade visual especial. Três expandem o Cosmere. Um segue por um caminho completamente
+            diferente.
+          </p>
+          <p>Você não precisa ler os quatro em ordem. Cada história abre uma nova porta.</p>
+        </div>
 
         <h3 className="world-section__subheading">Histórias do Cosmere</h3>
+        <p className="world-section__note">
+          <em>Tress</em> e <em>Yumi</em> funcionam muito bem como primeiras viagens pelo Cosmere. <em>O Homem
+          Iluminado</em> se conecta mais profundamente a outras histórias e recompensa especialmente quem já
+          conhece Roshar.
+        </p>
         <div className="secret-projects__grid">
           {cosmereBooks.map((book) => (
             <BookCard key={book.id} book={book} />
@@ -48,8 +67,8 @@ export default function SecretProjects() {
           <>
             <h3 className="world-section__subheading">Uma aventura fora do Cosmere</h3>
             <p className="world-section__note">
-              Embora faça parte dos Projetos Secretos de Brandon Sanderson, esta aventura se passa fora do
-              Cosmere.
+              Este livro nasceu da mesma campanha e recebeu o mesmo tratamento especial, mas sua história não
+              pertence ao Cosmere.
             </p>
             <div className="secret-projects__grid">
               {nonCosmereBooks.map((book) => (
@@ -58,6 +77,23 @@ export default function SecretProjects() {
             </div>
           </>
         )}
+
+        <aside className="world-section__future-note" aria-label="Ainda há segredos por vir">
+          <span className="world-section__future-eyebrow">Além do mapa</span>
+          <h3>Ainda há segredos por vir</h3>
+          <p>
+            Brandon Sanderson já nos ensinou que um segredo nunca é apenas o que parece. Novas histórias continuam
+            surgindo, novos mundos aguardam além do mapa e algumas portas ainda não estão prontas para ser abertas.
+          </p>
+          <p>Por enquanto, estas são as viagens que podemos compartilhar. O restante permanece em segredo.</p>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Continue acompanhando a Trama
+          </button>
+        </aside>
 
         <div className="world-section__actions">
           <button type="button" className="btn btn-primary" onClick={() => navigate('/jornada')}>
