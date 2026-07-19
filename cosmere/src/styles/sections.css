@@ -1541,3 +1541,41 @@
     width: 100%;
   }
 }
+
+
+/* ── Continuidade da escolha de jornada ───────────────────────────── */
+.path-selector__action {
+  display: block;
+  margin-top: 1rem;
+  color: var(--color-text-secondary);
+  font-size: var(--step-xs);
+  font-weight: 600;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+
+.path-selector__card:hover .path-selector__action,
+.path-selector__card:focus-visible .path-selector__action {
+  color: var(--color-gold);
+}
+
+.reading-journey__selection-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+#reading-routes {
+  scroll-margin-top: 7rem;
+}
+
+@media (max-width: 560px) {
+  .reading-journey__selection-actions {
+    flex-direction: column;
+  }
+
+  .reading-journey__selection-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

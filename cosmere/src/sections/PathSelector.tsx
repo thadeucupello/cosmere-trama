@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import { readingPaths } from '../data/content';
 import { useLocalStorage } from '../hooks/useLocalStorage';
@@ -13,6 +13,12 @@ const cardCopy: Record<PathId, string> = {
 
 export default function PathSelector() {
   const [selectedPath, setSelectedPath] = useLocalStorage<PathId | null>('cosmere:selected-path', null);
+  const navigate = useNavigate();
+
+  const choosePath = (pathId: PathId) => {
+    setSelectedPath(pathId);
+    navigate('/jornada');
+  };
 
   return (
     <section id="caminho" className="section path-selector" aria-label="Por onde você quer começar">
@@ -29,21 +35,15 @@ export default function PathSelector() {
               key={path.id}
               type="button"
               className={`path-selector__card ${selectedPath === path.id ? 'is-selected' : ''}`}
-              onClick={() => setSelectedPath(path.id)}
+              onClick={() => choosePath(path.id)}
               aria-pressed={selectedPath === path.id}
             >
               <p className="path-selector__prompt">{cardCopy[path.id]}</p>
               <span className="path-selector__recommendation">{path.recommendedLabel}</span>
+              <span className="path-selector__action">Escolher esta jornada →</span>
             </button>
           ))}
         </div>
-
-        {selectedPath && (
-          <p className="path-selector__note">
-            Seu primeiro destino está marcado. Veja a rota completa em{' '}
-            <Link to="/jornada">Sua Jornada</Link>.
-          </p>
-        )}
       </div>
     </section>
   );

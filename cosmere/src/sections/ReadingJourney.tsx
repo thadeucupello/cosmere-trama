@@ -12,6 +12,13 @@ export default function ReadingJourney() {
   const navigate = useNavigate();
   const selectedRoute = readingPaths.find((path) => path.id === selectedPath);
 
+  const chooseAnotherRoute = () => {
+    setSelectedPath(null);
+    window.requestAnimationFrame(() => {
+      document.getElementById('reading-routes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
   usePageMeta(
     'Sua Jornada | Descubra o Cosmere — Editora Trama',
     'Escolha sua trilha de leitura recomendada para começar no universo de Brandon Sanderson.'
@@ -27,7 +34,7 @@ export default function ReadingJourney() {
           subtitle="Não existe uma ordem obrigatória para descobrir o Cosmere. Escolha a rota que combina com o tipo de história que você quer viver agora."
         />
 
-        <div className="reading-journey__grid">
+        <div id="reading-routes" className="reading-journey__grid">
           {readingPaths.map((path) => (
             <ReadingPathCard
               key={path.id}
@@ -46,9 +53,14 @@ export default function ReadingJourney() {
               Seu primeiro destino é <strong>{selectedRoute.firstBook}</strong>. A partir dele,
               cada nova leitura revelará um pouco mais deste universo.
             </p>
-            <button type="button" className="btn btn-primary" onClick={() => navigate('/biblioteca')}>
-              Encontrar {selectedRoute.firstBook} na Biblioteca
-            </button>
+            <div className="reading-journey__selection-actions">
+              <button type="button" className="btn btn-primary" onClick={() => navigate('/biblioteca')}>
+                Encontrar {selectedRoute.firstBook} na Biblioteca
+              </button>
+              <button type="button" className="btn btn-ghost" onClick={chooseAnotherRoute}>
+                Escolher outra rota
+              </button>
+            </div>
           </div>
         )}
 
