@@ -8,9 +8,9 @@ export default function ExploreWorlds() {
       <div className="container">
         <SectionHeading
           align="center"
-          eyebrow="Os mundos"
-          title="Para onde sua jornada te leva?"
-          subtitle="Cada mundo tem sua própria atmosfera, sua própria magia e seu próprio ponto de entrada."
+          eyebrow="Próximos destinos"
+          title="Para onde sua jornada leva você?"
+          subtitle="Cinzas, tempestades, cores e caminhos inesperados. Cada destino guarda uma nova forma de imaginar a fantasia."
         />
 
         <div className="explore-worlds__grid">
