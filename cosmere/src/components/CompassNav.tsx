@@ -53,7 +53,7 @@ export default function CompassNav({ open, onClose, activeId }: Props) {
 
             <div className="compass-panel__groups">
               {navGroups.map((group) => (
-                <nav className="compass-group" aria-label={group.title} key={group.title}>
+                <nav className={`compass-group ${group.ids.includes(activeId) ? 'is-active' : ''}`} aria-label={group.title} key={group.title}>
                   <p className="compass-group__title"><span aria-hidden="true">{group.symbol}</span>{group.title}</p>
                   <ul>
                     {group.ids.map((id) => {

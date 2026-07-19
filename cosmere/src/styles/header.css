@@ -405,3 +405,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ── Polimento do mapa de navegação ──────────────────────────────── */
+.compass-group.is-active .compass-group__title > span {
+  color: #e4c686;
+  text-shadow:
+    0 0 8px rgba(201, 164, 98, 0.75),
+    0 0 20px rgba(201, 164, 98, 0.32);
+}
+
+@media (max-width: 680px) {
+  .compass-panel--editorial {
+    padding-top: calc(2.4rem + env(safe-area-inset-top, 0px));
+  }
+}
