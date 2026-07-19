@@ -12,10 +12,31 @@ const world = getWorld('roshar');
 const books = getBooksByWorld('roshar');
 
 const blocks = [
-  { title: 'Altas Tempestades', description: 'Tormentas violentas que varrem o continente, moldando paisagens, costumes e crenças.' },
-  { title: 'Tempestuosidade', description: 'Uma energia capturada das tempestades, capaz de sustentar magia e vida.' },
-  { title: 'Spren', description: 'Seres que surgem em resposta a emoções, ideias e fenômenos naturais.' },
-  { title: 'Cavaleiros Radiantes', description: 'Antigas ordens ligadas a juramentos e a um poder pouco compreendido.' },
+  {
+    title: 'Altas Tempestades',
+    description:
+      'Muralhas de vento, chuva e pedra que atravessam o continente, transformando a paisagem e determinando o ritmo da vida em Roshar.',
+  },
+  {
+    title: 'Luz das tempestades',
+    description:
+      'Uma energia capturada em esferas durante as tempestades. Ela ilumina cidades, alimenta a magia e pode conceder habilidades extraordinárias.',
+  },
+  {
+    title: 'Spren',
+    description:
+      'Seres atraídos por emoções, ideias e forças da natureza. Em Roshar, medo, glória, dor e até o vento podem ganhar forma diante dos olhos.',
+  },
+  {
+    title: 'Cavaleiros Radiantes',
+    description:
+      'Dez antigas ordens formadas por pessoas ligadas aos spren. Seus poderes nascem de vínculos e juramentos que precisam ser vividos, não apenas pronunciados.',
+  },
+  {
+    title: 'Espadas e Armaduras Fractais',
+    description:
+      'Relíquias dos antigos Radiantes que concedem poder quase sobre-humano e podem transformar o destino de uma batalha ou de um reino.',
+  },
 ];
 
 export default function RosharSection() {
@@ -36,12 +57,30 @@ export default function RosharSection() {
     >
       <div className="container">
         <BackToMapLink />
-        <SectionHeading eyebrow="Mundo" title={world.name} subtitle={world.tagline} />
+        <SectionHeading
+          eyebrow="O mundo de Relatos da Guerra das Tempestades"
+          title={world.name}
+          subtitle="Um mundo de pedra e tempestades, onde juramentos despertam poderes e antigas lendas começam a retornar."
+        />
 
-        <p className="world-section__intro">
-          Roshar é um dos cenários de fantasia mais admirados dos últimos anos. Tempestades moldam a terra, os
-          povos e as lendas que atravessam gerações.
-        </p>
+        <div className="world-section__intro">
+          <p>
+            Roshar é um mundo moldado por tempestades tão violentas que transformaram sua paisagem, sua fauna e a
+            maneira como seus povos vivem. Reinos disputam poder em guerras intermináveis, enquanto Espadas e
+            Armaduras Fractais, vestígios de uma era lendária, ainda são capazes de decidir batalhas e coroar
+            governantes.
+          </p>
+          <p>
+            É nesse cenário que se cruzam as histórias de Kaladin, um soldado que luta para não perder a esperança;
+            Shallan, uma jovem estudiosa cercada por segredos; e Dalinar, um guerreiro assombrado pelo próprio
+            passado. Cada um carrega feridas, verdades ocultas e juramentos que podem mudar o destino do mundo.
+          </p>
+          <p>
+            Enquanto uma antiga ameaça volta a despertar, os Cavaleiros Radiantes, desaparecidos há séculos,
+            começam a deixar novos sinais. Relatos da Guerra das Tempestades é uma fantasia épica sobre guerra,
+            honra, poder e pessoas quebradas tentando reconstruir a si mesmas antes que Roshar seja destruída.
+          </p>
+        </div>
 
         <div className="magic-card-grid">
           {blocks.map((b) => (
