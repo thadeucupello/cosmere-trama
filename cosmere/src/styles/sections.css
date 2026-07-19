@@ -1485,3 +1485,59 @@
     text-align: left;
   }
 }
+
+
+/* ── Ajustes de leitura em telas pequenas ─────────────────────────── */
+.cosmere-tooltip__copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.cosmere-tooltip__name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--step-lg);
+  line-height: 1.15;
+}
+
+.cosmere-tooltip__description {
+  margin-top: 0.5rem;
+  color: var(--color-text-primary);
+  font-size: var(--step-sm);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+@media (max-width: 560px) {
+  .newsletter .section-heading {
+    max-width: 13ch;
+  }
+
+  .cosmere-map .section-sub {
+    max-width: 31ch;
+  }
+
+  .cosmere-map__statement {
+    max-width: 27ch;
+    text-wrap: balance;
+  }
+
+  .cosmere-tooltip__card {
+    align-items: flex-start;
+    padding: 1.25rem;
+  }
+
+  .cosmere-tooltip__cover {
+    margin-inline: auto;
+  }
+
+  .cosmere-tooltip__copy {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cosmere-tooltip__cta {
+    justify-content: center;
+    width: 100%;
+  }
+}

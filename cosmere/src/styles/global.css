@@ -141,6 +141,31 @@ img {
   margin-top: 1rem;
 }
 
+.section-heading-block--center {
+  width: 100%;
+}
+
+.section-heading-block--center .section-heading,
+.section-heading-block--center .section-sub {
+  margin-inline: auto;
+}
+
+.section-heading-block--center .section-heading {
+  text-wrap: balance;
+}
+
+.section-heading-block--center .section-sub {
+  text-wrap: pretty;
+}
+
+@media (max-width: 560px) {
+  .section-heading-block--center .section-sub {
+    max-width: 34ch;
+    font-size: var(--step-base);
+    line-height: 1.7;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

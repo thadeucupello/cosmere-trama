@@ -11,7 +11,7 @@ interface Props {
 export default function SectionHeading({ eyebrow, title, subtitle, align = 'left' }: Props) {
   return (
     <motion.div
-      className="section-heading-block"
+      className={`section-heading-block section-heading-block--${align}`}
       style={{ textAlign: align }}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

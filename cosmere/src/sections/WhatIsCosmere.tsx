@@ -116,9 +116,11 @@ export default function WhatIsCosmere() {
                   loading="lazy"
                 />
               )}
-              <div>
-                <strong style={{ color: activeWorld.accent }}>{activeWorld.name}</strong>
-                <span>{activeWorld.teaser}</span>
+              <div className="cosmere-tooltip__copy">
+                <h3 className="cosmere-tooltip__name" style={{ color: activeWorld.accent }}>
+                  {activeWorld.name}
+                </h3>
+                <p className="cosmere-tooltip__description">{activeWorld.teaser}</p>
                 {relatedBook && (
                   <Link to={`/projetos-secretos#${relatedBook.id}`} className="btn btn-ghost cosmere-tooltip__cta">
                     Conhecer {relatedBook.title}
