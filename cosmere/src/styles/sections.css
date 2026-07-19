@@ -1236,3 +1236,149 @@
     justify-content: center;
   }
 }
+
+
+/* ── Biblioteca editorial e jornada personalizada ─────────────────── */
+.trama-library__journey {
+  max-width: 760px;
+  margin-top: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  border: 1px solid rgba(201, 164, 98, 0.58);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-gold-soft), transparent);
+}
+
+.trama-library__journey-eyebrow {
+  color: var(--color-gold);
+  font-size: var(--step-xs);
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.trama-library__journey h2 {
+  margin-top: 0.6rem;
+  font-size: var(--step-xl);
+}
+
+.trama-library__journey p {
+  max-width: 58ch;
+  margin: 0.75rem 0 1.4rem;
+  color: var(--color-text-secondary);
+}
+
+.trama-library__journey strong {
+  color: var(--color-text-primary);
+}
+
+.trama-library__filter-panel {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-elevated) 72%, transparent);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.trama-library__filter-label {
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--step-base);
+}
+
+.trama-library__filter-panel .trama-library__filters {
+  margin-top: 0.8rem;
+}
+
+.trama-library__status-guide {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-line);
+}
+
+.trama-library__status-guide p {
+  background: var(--color-elevated);
+  padding: 1rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.trama-library__status-guide strong {
+  color: var(--color-gold);
+  font-size: var(--step-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.trama-library__status-guide span {
+  color: var(--color-text-muted);
+  font-size: var(--step-xs);
+}
+
+.trama-library__group-heading {
+  max-width: 64ch;
+  margin-bottom: 1.25rem;
+}
+
+.trama-library__group-heading .trama-library__group-title {
+  margin-bottom: 0;
+}
+
+.trama-library__group-heading p {
+  margin-top: 0.45rem;
+  color: var(--color-text-secondary);
+}
+
+.book-card--highlighted {
+  position: relative;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 34px rgba(201, 164, 98, 0.16);
+  scroll-margin-top: 8rem;
+}
+
+.book-card__journey-badge {
+  position: absolute;
+  z-index: 3;
+  top: -11px;
+  right: 12px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: var(--color-gold);
+  color: #14110a;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.book-card__universe-badge {
+  position: absolute;
+  top: 2.65rem;
+  left: 0.6rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(5, 7, 13, 0.84);
+  color: var(--color-text-secondary);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+  .trama-library__status-guide {
+    grid-template-columns: 1fr;
+  }
+
+  .trama-library__journey .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
