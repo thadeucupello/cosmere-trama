@@ -142,6 +142,12 @@ function NewsletterShell({ children }: { children: React.ReactNode }) {
         </ul>
 
         {children}
+
+        <div className="newsletter__ending" aria-label="Encerramento">
+          <span aria-hidden="true">✦</span>
+          <p>A jornada não termina na última página.</p>
+          <strong>Outros mundos ainda esperam por você.</strong>
+        </div>
       </div>
     </section>
   );

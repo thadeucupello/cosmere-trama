@@ -1691,3 +1691,107 @@
     font-size: 0.52rem;
   }
 }
+
+
+/* ── Encerramento e footer compacto ─────────────────────────────── */
+.newsletter__ending {
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-line);
+  width: min(620px, 100%);
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+  font-size: var(--step-lg);
+}
+
+.newsletter__ending > span {
+  margin-bottom: 0.45rem;
+  color: var(--color-gold);
+}
+
+.newsletter__ending strong {
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.site-footer--compact {
+  padding-top: 0;
+}
+
+.site-footer__compact-main {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.site-footer__compact-main .site-footer__brand p {
+  max-width: 33ch;
+}
+
+.site-footer__links--inline {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.65rem 1.4rem;
+}
+
+.site-footer__links--inline li {
+  display: inline-flex;
+}
+
+.site-footer__compact-bottom {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.site-footer__social--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.site-footer__compact-bottom .site-footer__copyright {
+  padding-block: 1.25rem;
+  text-align: right;
+}
+
+@media (max-width: 680px) {
+  .newsletter__ending {
+    margin-top: 3rem;
+    font-size: var(--step-base);
+    text-align: center;
+  }
+
+  .site-footer__compact-main {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-top: 2rem;
+  }
+
+  .site-footer__links--inline {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 1rem;
+  }
+
+  .site-footer__compact-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 1.25rem;
+  }
+
+  .site-footer__compact-bottom .site-footer__copyright {
+    padding-block: 1rem 1.4rem;
+    text-align: left;
+  }
+}
