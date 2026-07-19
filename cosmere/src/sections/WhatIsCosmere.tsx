@@ -137,7 +137,7 @@ export default function WhatIsCosmere() {
           <button
             type="button"
             className="btn btn-ghost"
-            onClick={() => document.getElementById('caminho')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('mundos')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Continuar explorando
           </button>

@@ -4,7 +4,7 @@ import { worlds } from '../data/worlds';
 
 export default function ExploreWorlds() {
   return (
-    <section className="section explore-worlds" aria-label="Explorar os mundos">
+    <section id="mundos" className="section explore-worlds" aria-label="Explorar os mundos">
       <div className="container">
         <SectionHeading
           align="center"

@@ -15,8 +15,8 @@ export default function HomePage() {
       <Hero />
       <AboutAuthor />
       <WhatIsCosmere />
-      <PathSelector />
       <ExploreWorlds />
+      <PathSelector />
     </>
   );
 }
