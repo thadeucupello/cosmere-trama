@@ -12,7 +12,7 @@ const world = getWorld('scadrial');
 const scadrialBooks = getBooksByWorld('scadrial');
 const originalTrilogyGroup = scadrialBooks.filter((b) => b.series === 'Mistborn: a Trilogia Original');
 const eraTwoBooks = scadrialBooks.filter((b) => b.series === 'Mistborn: Era Dois');
-const secretHistory = scadrialBooks.find((b) => b.series === 'Mistborn — História Secreta');
+const secretHistory = scadrialBooks.find((b) => b.series === 'Mistborn: História Secreta');
 
 const magicSystems = [
   {
@@ -124,11 +124,26 @@ export default function ScadrialSection() {
 
         {secretHistory && (
           <>
-            <h3 className="world-section__subheading">Mistborn — História Secreta</h3>
-            <p className="world-section__note">
-              Uma novela complementar, à parte da linha do tempo principal — recomendada apenas para quem já leu
-              a Trilogia Original.
-            </p>
+            <h3 className="world-section__subheading">Mistborn: História Secreta</h3>
+            <div className="world-section__note world-section__note--expanded">
+              <p>
+                Há outra história acontecendo por trás dos acontecimentos da Trilogia Original. <em>Mistborn:
+                História Secreta</em> revisita momentos decisivos da saga por uma perspectiva inesperada, revela
+                parte da engrenagem oculta do Cosmere e transforma a maneira como enxergamos alguns personagens e
+                acontecimentos de Scadrial.
+              </p>
+              <p>
+                É uma leitura complementar, feita para quem deseja atravessar as fronteiras da história principal
+                e começar a perceber com mais clareza as conexões entre os mundos de Brandon Sanderson.
+              </p>
+            </div>
+            <aside className="world-section__spoiler-note" aria-label="Aviso sobre a ordem de leitura">
+              <strong>Atenção: esta história contém grandes spoilers da Trilogia Original.</strong>
+              <p>
+                Leia somente depois de <em>O Herói das Eras</em>. Para preservar também as revelações da Era Dois,
+                a experiência ideal é ler depois de <em>Os Braceletes da Perdição</em>.
+              </p>
+            </aside>
             <div className="book-timeline book-timeline--single">
               <BookCard book={secretHistory} />
             </div>
