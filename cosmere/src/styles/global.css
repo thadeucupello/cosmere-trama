@@ -81,6 +81,14 @@ body {
   overflow-x: hidden;
 }
 
+/* A composição editorial foi desenhada para respirar como no zoom de 80%.
+   Aplicamos essa escala apenas no desktop e preservamos o mobile nativo. */
+@media (min-width: 901px) {
+  body {
+    zoom: 0.8;
+  }
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 600;
