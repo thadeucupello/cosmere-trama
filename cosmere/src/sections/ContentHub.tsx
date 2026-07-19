@@ -17,7 +17,7 @@ export default function ContentHub() {
   }, [category, query]);
 
   return (
-    <main id="main-content" className="archive-hub">
+    <div className="archive-hub">
       <section className="archive-hero section">
         <div className="container archive-hero__inner">
           <div><p className="eyebrow">Leituras para atravessar mundos</p><h1>Arquivos da Cosmere</h1><p>Guias, contextos e caminhos de leitura para quem acaba de chegar e para quem já começou a enxergar as conexões.</p></div>
@@ -33,6 +33,6 @@ export default function ContentHub() {
         <p className="archive-results" aria-live="polite">{filtered.length} {filtered.length === 1 ? 'arquivo encontrado' : 'arquivos encontrados'}</p>
         {filtered.length ? <div className="archive-grid">{filtered.map((article) => <ArticleCard key={article.slug} article={article} />)}</div> : <div className="archive-empty"><span>◇</span><h3>Nenhum arquivo encontrado</h3><p>Tente outro termo ou volte para todos os assuntos.</p></div>}
       </div></section>
-    </main>
+    </div>
   );
 }

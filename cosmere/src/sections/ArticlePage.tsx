@@ -10,13 +10,13 @@ export default function ArticlePage() {
   const article = getArticle(slug);
   usePageMeta(article ? `${article.title} | Arquivos da Cosmere` : 'Arquivo não encontrado | A Cosmere', article?.excerpt);
 
-  if (!article) return <main id="main-content" className="section archive-not-found"><div className="container"><span>◇</span><h1>Este arquivo ainda não foi encontrado.</h1><Link className="btn btn-primary" to="/arquivos">Voltar aos arquivos</Link></div></main>;
+  if (!article) return <section className="section archive-not-found"><div className="container"><span>◇</span><h1>Este arquivo ainda não foi encontrado.</h1><Link className="btn btn-primary" to="/arquivos">Voltar aos arquivos</Link></div></section>;
 
   const relatedBooks = article.relatedBookIds.map((id) => books.find((book) => book.id === id)).filter((book): book is NonNullable<typeof book> => Boolean(book));
   const relatedArticles = articles.filter((item) => item.slug !== article.slug).slice(0, 2);
 
   return (
-    <main id="main-content" className="article-page">
+    <div className="article-page">
       <header className="article-header section"><div className="container article-header__inner">
         <Link className="back-to-map" to="/arquivos">← Todos os arquivos</Link>
         <p className="eyebrow">{article.eyebrow}</p><h1>{article.title}</h1><p className="article-header__dek">{article.excerpt}</p>
@@ -35,6 +35,6 @@ export default function ArticlePage() {
 
       <section className="section article-books"><div className="container"><p className="eyebrow">Continue a leitura</p><h2>Livros relacionados</h2><div className="book-grid">{relatedBooks.map((book) => <BookCard key={book.id} book={book} />)}</div></div></section>
       <section className="section article-related"><div className="container"><p className="eyebrow">Outros arquivos</p><h2>Há mais mundos no mapa</h2><div className="archive-grid">{relatedArticles.map((item) => <ArticleCard key={item.slug} article={item} />)}</div></div></section>
-    </main>
+    </div>
   );
 }
