@@ -16,8 +16,13 @@ export default function PathSelector() {
   const navigate = useNavigate();
 
   const choosePath = (pathId: PathId) => {
+    try {
+      window.localStorage.setItem('cosmere:selected-path', JSON.stringify(pathId));
+    } catch {
+      // A navegação continua mesmo quando o armazenamento do navegador está indisponível.
+    }
     setSelectedPath(pathId);
-    navigate('/jornada');
+    navigate('/jornada', { state: { selectedPath: pathId } });
   };
 
   return (
