@@ -19,7 +19,7 @@ export const readingPaths: ReadingPath[] = [
     id: 'aventura',
     title: 'Primeira viagem',
     audience: 'Para quem nunca leu Brandon Sanderson.',
-    recommendedLabel: 'Mistborn — Trilogia Original',
+    recommendedLabel: 'Mistborn, a Trilogia Original',
     steps: ['O Império Final', 'O Poço da Ascensão', 'O Herói das Eras', 'Continuar explorando o Cosmere'],
   },
   {
