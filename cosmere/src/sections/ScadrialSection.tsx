@@ -10,7 +10,7 @@ import { usePageMeta } from '../hooks/usePageMeta';
 
 const world = getWorld('scadrial');
 const scadrialBooks = getBooksByWorld('scadrial');
-const originalTrilogyGroup = scadrialBooks.filter((b) => b.series === 'Mistborn — Trilogia Original');
+const originalTrilogyGroup = scadrialBooks.filter((b) => b.series === 'Mistborn: a Trilogia Original');
 const eraTwoBooks = scadrialBooks.filter((b) => b.series === 'Mistborn — Era Dois');
 const secretHistory = scadrialBooks.find((b) => b.series === 'Mistborn — História Secreta');
 
@@ -83,15 +83,17 @@ export default function ScadrialSection() {
           ))}
         </div>
 
-        <h3 className="world-section__subheading">Mistborn — Trilogia Original</h3>
+        <h3 className="world-section__subheading">Mistborn: a Trilogia Original</h3>
         <div className="book-timeline">
           {originalTrilogyGroup.map((book) => (
             <BookCard key={book.id} book={book} />
           ))}
         </div>
         <p className="world-section__note">
-          Uma história completa. A melhor porta de entrada para novos leitores — em três volumes individuais
-          ou em um único box com a trilogia completa.
+          Uma fantasia épica com o ritmo de uma história de assalto. Tudo começa com um grupo de ladrões decidido
+          a derrubar um império governado há mil anos pelo mesmo homem. A partir daí, a trama cresce livro a livro
+          até alcançar o destino de toda Scadrial. Uma história completa em três volumes e a melhor porta de entrada
+          para o Cosmere.
         </p>
 
         <div className="world-transition-caption" aria-hidden="true">
