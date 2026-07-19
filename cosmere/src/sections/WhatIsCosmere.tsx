@@ -61,8 +61,12 @@ export default function WhatIsCosmere() {
           align="center"
           eyebrow="O universo"
           title="O que é o Cosmere?"
-          subtitle="O Cosmere é um universo compartilhado onde diferentes histórias acontecem em mundos distintos. Cada série pode ser lida individualmente, mas todas fazem parte de algo maior."
+          subtitle="O Cosmere é o universo compartilhado que abriga grande parte das histórias de Brandon Sanderson. Cada saga acontece em um mundo diferente, com seus próprios povos, conflitos e sistemas de magia, e pode ser lida de forma independente. Mas, à medida que você viaja entre esses mundos, conexões começam a surgir, personagens atravessam histórias e algo muito maior se revela."
         />
+
+        <p className="cosmere-map__statement">
+          No Cosmere, cada livro conta uma história. Juntos, eles formam um universo.
+        </p>
 
         <div className="cosmere-orbit" role="group" aria-label="Mapa dos mundos do Cosmere">
           <div className="cosmere-orbit__core" aria-hidden="true" />
