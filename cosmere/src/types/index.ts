@@ -37,6 +37,10 @@ export interface ReadingPath {
   title: string;
   audience: string;
   recommendedLabel: string;
+  tagline: string;
+  commitment: string;
+  symbol: string;
+  firstBook: string;
   steps: string[];
 }
 
