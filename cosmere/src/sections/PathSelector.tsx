@@ -5,10 +5,10 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import type { PathId } from '../types';
 
 const cardCopy: Record<PathId, string> = {
-  aventura: 'Quero uma grande aventura.',
-  epico: 'Quero mergulhar em uma saga épica.',
-  unico: 'Quero começar por um livro único.',
-  completo: 'Quero explorar todo o Cosmere.',
+  aventura: 'Quero começar pela melhor porta de entrada.',
+  epico: 'Quero mergulhar em uma saga monumental.',
+  unico: 'Quero viver uma história completa em um só livro.',
+  completo: 'Quero percorrer o Cosmere e descobrir todas as conexões.',
 };
 
 export default function PathSelector() {
@@ -17,7 +17,11 @@ export default function PathSelector() {
   return (
     <section id="caminho" className="section path-selector" aria-label="Por onde você quer começar">
       <div className="container">
-        <SectionHeading align="center" title="Por onde você quer começar?" />
+        <SectionHeading
+          align="center"
+          title="Por onde você quer começar?"
+          subtitle="Não existe uma única porta de entrada para o Cosmere. Escolha o tipo de história que mais chama você."
+        />
 
         <div className="path-selector__grid">
           {readingPaths.map((path) => (
@@ -36,7 +40,7 @@ export default function PathSelector() {
 
         {selectedPath && (
           <p className="path-selector__note">
-            Ótima escolha — sua jornada recomendada foi atualizada na página{' '}
+            Seu primeiro destino está marcado. Veja a rota completa em{' '}
             <Link to="/jornada">Sua Jornada</Link>.
           </p>
         )}
