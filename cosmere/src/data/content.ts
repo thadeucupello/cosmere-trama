@@ -3,7 +3,7 @@ import type { CampaignHighlight, NavItem, ReadingPath } from '../types';
 export const navItems: NavItem[] = [
   { id: 'hero', label: 'Início', route: '/' },
   { id: 'autor', label: 'Brandon Sanderson', route: '/', hash: 'autor' },
-  { id: 'cosmere', label: 'O que é o Cosmere', route: '/', hash: 'cosmere' },
+  { id: 'cosmere', label: 'O que é a Cosmere', route: '/', hash: 'cosmere' },
   { id: 'caminho', label: 'Por onde começar', route: '/', hash: 'caminho' },
   { id: 'scadrial', label: 'Scadrial', route: '/scadrial' },
   { id: 'roshar', label: 'Roshar', route: '/roshar' },
@@ -54,7 +54,7 @@ export const readingPaths: ReadingPath[] = [
     title: 'Uma história completa',
     audience: 'Para quem prefere começar por aventuras independentes.',
     recommendedLabel: 'Descubra os livros únicos',
-    tagline: 'Conheça o Cosmere em aventuras que cabem em um único volume.',
+    tagline: 'Conheça a Cosmere em aventuras que cabem em um único volume.',
     commitment: '4 histórias · aventuras independentes',
     symbol: '◈',
     firstBook: 'Warbreaker: o sopro dos Deuses',

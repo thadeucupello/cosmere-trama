@@ -43,7 +43,7 @@ export default function RosharSection() {
   const ref = useMarkExplored('roshar');
   const navigate = useNavigate();
   usePageMeta(
-    'Roshar | Descubra o Cosmere — Editora Trama',
+    'Roshar | Descubra a Cosmere — Editora Trama',
     'Conheça Roshar, o mundo de Relatos da Guerra das Tempestades, e os livros publicados pela Trama.'
   );
 

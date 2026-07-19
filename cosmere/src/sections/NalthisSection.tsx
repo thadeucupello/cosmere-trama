@@ -15,7 +15,7 @@ export default function NalthisSection() {
   const ref = useMarkExplored('nalthis');
   const navigate = useNavigate();
   usePageMeta(
-    'Nalthis | Descubra o Cosmere — Editora Trama',
+    'Nalthis | Descubra a Cosmere — Editora Trama',
     'Conheça Nalthis, o mundo de Warbreaker, e sua magia BioCromática construída sobre cor e Respiração.'
   );
 
@@ -80,7 +80,7 @@ export default function NalthisSection() {
             escolha pode aproximar dois reinos da paz ou da guerra.
           </p>
           <p>
-            Uma história completa em um único volume e uma excelente porta de entrada para o Cosmere. Pode ser
+            Uma história completa em um único volume e uma excelente porta de entrada para a Cosmere. Pode ser
             lida de forma independente, mas suas conexões ganham importância especial para quem também percorre
             Roshar.
           </p>

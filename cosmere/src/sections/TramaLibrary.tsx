@@ -90,7 +90,7 @@ export default function TramaLibrary() {
   const spotlight = selectedPath ? journeySpotlights[selectedPath] : null;
 
   usePageMeta(
-    'Biblioteca Trama | Descubra o Cosmere',
+    'Biblioteca Trama | Descubra a Cosmere',
     'Explore os livros de Brandon Sanderson publicados pela Editora Trama e encontre sua próxima jornada.'
   );
 
@@ -127,7 +127,7 @@ export default function TramaLibrary() {
         <BackToMapLink to="/" label="Voltar para o início" />
         <SectionHeading
           title="Uma biblioteca de mundos."
-          subtitle="Reúna suas próximas jornadas pelo Cosmere. Explore as séries publicadas pela Trama, descubra por onde começar e acompanhe os próximos lançamentos."
+          subtitle="Reúna suas próximas jornadas pela Cosmere. Explore as séries publicadas pela Trama, descubra por onde começar e acompanhe os próximos lançamentos."
         />
 
         {spotlight && (

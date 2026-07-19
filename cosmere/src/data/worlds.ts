@@ -6,7 +6,7 @@ export const worlds: World[] = [
   {
     id: 'scadrial',
     name: 'Scadrial',
-    tagline: 'O mundo onde a primeira grande porta para o Cosmere foi aberta.',
+    tagline: 'O mundo onde a primeira grande porta para a Cosmere foi aberta.',
     teaser: 'Sob um céu de cinzas, metais despertam poderes capazes de derrubar impérios.',
     accent: '#B8C0CC',
     accentSoft: 'rgba(184, 192, 204, 0.14)',
@@ -30,8 +30,8 @@ export const worlds: World[] = [
   {
     id: 'secret-projects',
     name: 'Projetos Secretos',
-    tagline: 'Histórias que surpreenderam o próprio Cosmere.',
-    teaser: 'Quatro histórias nascidas em segredo. Três revelam novos cantos do Cosmere; uma leva você para além dele.',
+    tagline: 'Histórias que surpreenderam a própria Cosmere.',
+    teaser: 'Quatro histórias nascidas em segredo. Três revelam novos cantos da Cosmere; uma leva você para além dela.',
     accent: '#C9A462',
     accentSoft: 'rgba(201, 164, 98, 0.16)',
   },

@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="hero__title"
         >
-          DESCUBRA O COSMERE
+          DESCUBRA A COSMERE
         </motion.h1>
 
         <motion.p

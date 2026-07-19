@@ -95,7 +95,7 @@ export default function Newsletter() {
             required
           />
           <button type="submit" className="btn btn-primary" disabled={state === 'loading'}>
-            {state === 'loading' ? 'Enviando…' : 'Quero acompanhar o Cosmere'}
+            {state === 'loading' ? 'Enviando…' : 'Quero acompanhar a Cosmere'}
           </button>
         </div>
 
@@ -132,13 +132,13 @@ function NewsletterShell({ children }: { children: React.ReactNode }) {
         <SectionHeading
           align="center"
           title="Alguns segredos levam tempo para serem revelados."
-          subtitle="Receba novidades sobre lançamentos, pré-vendas e novas viagens pelo Cosmere diretamente da Trama."
+          subtitle="Receba novidades sobre lançamentos, pré-vendas e novas viagens pela Cosmere diretamente da Trama."
         />
 
         <ul className="newsletter__benefits" aria-label="O que você receberá">
           <li>Novos lançamentos</li>
           <li>Abertura de pré-vendas</li>
-          <li>Conteúdos e novidades do Cosmere</li>
+          <li>Conteúdos e novidades da Cosmere</li>
         </ul>
 
         {children}

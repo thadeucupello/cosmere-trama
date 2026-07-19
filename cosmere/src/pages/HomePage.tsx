@@ -7,7 +7,7 @@ import ExploreWorlds from '../sections/ExploreWorlds';
 
 export default function HomePage() {
   useEffect(() => {
-    document.title = 'Descubra o Cosmere | Brandon Sanderson na Editora Trama';
+    document.title = 'Descubra a Cosmere | Brandon Sanderson na Editora Trama';
   }, []);
 
   return (

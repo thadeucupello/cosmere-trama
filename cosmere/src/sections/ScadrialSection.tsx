@@ -35,7 +35,7 @@ export default function ScadrialSection() {
   const ref = useMarkExplored('scadrial');
   const navigate = useNavigate();
   usePageMeta(
-    'Scadrial | Descubra o Cosmere — Editora Trama',
+    'Scadrial | Descubra a Cosmere — Editora Trama',
     'Conheça Scadrial, o mundo de Mistborn: Allomancia, Feruquimia, Hemalurgia e os livros publicados pela Trama.'
   );
 
@@ -93,7 +93,7 @@ export default function ScadrialSection() {
           Uma fantasia épica com o ritmo de uma história de assalto. Tudo começa com um grupo de ladrões decidido
           a derrubar um império governado há mil anos pelo mesmo homem. A partir daí, a trama cresce livro a livro
           até alcançar o destino de toda Scadrial. Uma história completa em três volumes e a melhor porta de entrada
-          para o Cosmere.
+          para a Cosmere.
         </p>
 
         <div className="world-transition-caption" aria-hidden="true">
@@ -112,7 +112,7 @@ export default function ScadrialSection() {
             É nesse mundo que surgem Wax e Wayne, dois homens da lei com poderes, métodos e temperamentos muito
             diferentes. Misturando fantasia, investigação, aventura de fronteira e romance policial, os quatro
             livros revelam como as decisões da primeira era continuam moldando Scadrial e aproximam Mistborn das
-            grandes conexões do Cosmere.
+            grandes conexões da Cosmere.
           </p>
           <p>Recomendamos a leitura depois da Trilogia Original.</p>
         </div>
@@ -129,7 +129,7 @@ export default function ScadrialSection() {
               <p>
                 Há outra história acontecendo por trás dos acontecimentos da Trilogia Original. <em>Mistborn:
                 História Secreta</em> revisita momentos decisivos da saga por uma perspectiva inesperada, revela
-                parte da engrenagem oculta do Cosmere e transforma a maneira como enxergamos alguns personagens e
+                parte da engrenagem oculta da Cosmere e transforma a maneira como enxergamos alguns personagens e
                 acontecimentos de Scadrial.
               </p>
               <p>
@@ -152,7 +152,7 @@ export default function ScadrialSection() {
 
         <div className="world-section__actions">
           <button type="button" className="btn btn-primary" onClick={() => navigate('/roshar')}>
-            Continuar explorando o Cosmere
+            Continuar explorando a Cosmere
           </button>
           <button type="button" className="btn btn-ghost" onClick={() => navigate('/biblioteca')}>
             Conhecer os livros publicados pela Trama

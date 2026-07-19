@@ -21,7 +21,7 @@ export default function Header() {
     <header className="site-header">
       <div className="site-header__progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
       <div className="container site-header__row">
-        <Link to="/" className="site-header__logo" aria-label="Descubra o Cosmere — início">
+        <Link to="/" className="site-header__logo" aria-label="Descubra a Cosmere — início">
           <TramaLogo size="small" />
         </Link>
 

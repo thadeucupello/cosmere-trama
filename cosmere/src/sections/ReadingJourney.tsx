@@ -20,7 +20,7 @@ export default function ReadingJourney() {
   };
 
   usePageMeta(
-    'Sua Jornada | Descubra o Cosmere — Editora Trama',
+    'Sua Jornada | Descubra a Cosmere — Editora Trama',
     'Escolha sua trilha de leitura recomendada para começar no universo de Brandon Sanderson.'
   );
 
@@ -31,7 +31,7 @@ export default function ReadingJourney() {
         <SectionHeading
           align="center"
           title="Toda jornada começa com uma escolha."
-          subtitle="Não existe uma ordem obrigatória para descobrir o Cosmere. Escolha a rota que combina com o tipo de história que você quer viver agora."
+          subtitle="Não existe uma ordem obrigatória para descobrir a Cosmere. Escolha a rota que combina com o tipo de história que você quer viver agora."
         />
 
         <div id="reading-routes" className="reading-journey__grid">
@@ -69,7 +69,7 @@ export default function ReadingJourney() {
           <div>
             <h2>As conexões aparecem durante o caminho.</h2>
             <p>
-              Você não precisa conhecer todo o Cosmere para aproveitar cada história. Mas, quanto
+              Você não precisa conhecer toda a Cosmere para aproveitar cada história. Mas, quanto
               mais mundos visitar, mais detalhes começará a reconhecer. Personagens, objetos e
               acontecimentos atravessam essas páginas de maneiras nem sempre evidentes.
             </p>

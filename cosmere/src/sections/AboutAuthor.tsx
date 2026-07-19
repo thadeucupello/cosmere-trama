@@ -5,15 +5,15 @@ import brandonPortrait from '../assets/brandon/portrait.webp';
 const facts = [
   'Best-seller internacional',
   'Milhões de livros vendidos em todo o mundo',
-  'Criador do Cosmere',
+  'Criador da Cosmere',
   'Autor de Mistborn e Relatos da Guerra das Tempestades',
 ];
 
 const timeline = [
-  { year: '2005', label: 'Elantris apresenta o primeiro mundo do Cosmere' },
+  { year: '2005', label: 'Elantris apresenta o primeiro mundo da Cosmere' },
   { year: '2006', label: 'Mistborn abre as portas de Scadrial' },
   { year: '2010', label: 'Começa a jornada pelos Relatos da Guerra das Tempestades' },
-  { year: 'Hoje', label: 'Mundos, histórias e personagens continuam expandindo o Cosmere' },
+  { year: 'Hoje', label: 'Mundos, histórias e personagens continuam expandindo a Cosmere' },
 ];
 
 export default function AboutAuthor() {
@@ -40,7 +40,7 @@ export default function AboutAuthor() {
           <SectionHeading eyebrow="O autor" title="Quem é Brandon Sanderson?" />
           <p className="about-author__intro">
             Brandon Sanderson constrói mundos como poucos. Suas histórias combinam sistemas de magia engenhosos,
-            personagens inesquecíveis e tramas que recompensam cada detalhe. No centro de sua obra está o Cosmere,
+            personagens inesquecíveis e tramas que recompensam cada detalhe. No centro de sua obra está a Cosmere,
             um universo compartilhado que cresce livro a livro e convida cada leitor a descobrir suas conexões.
           </p>
 

@@ -8,7 +8,7 @@ const cardCopy: Record<PathId, string> = {
   aventura: 'Quero começar pela melhor porta de entrada.',
   epico: 'Quero mergulhar em uma saga monumental.',
   unico: 'Quero viver uma história completa em um só livro.',
-  completo: 'Quero percorrer o Cosmere e descobrir todas as conexões.',
+  completo: 'Quero percorrer a Cosmere e descobrir todas as conexões.',
 };
 
 export default function PathSelector() {
@@ -31,7 +31,7 @@ export default function PathSelector() {
         <SectionHeading
           align="center"
           title="Por onde você quer começar?"
-          subtitle="Não existe uma única porta de entrada para o Cosmere. Escolha o tipo de história que mais chama você."
+          subtitle="Não existe uma única porta de entrada para a Cosmere. Escolha o tipo de história que mais chama você."
         />
 
         <div className="path-selector__grid">
