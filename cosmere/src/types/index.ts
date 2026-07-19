@@ -31,6 +31,8 @@ export interface Article {
   imageCredit?: string;
   imageCreditUrl?: string;
   imageSource?: string;
+  heroFit?: 'cover' | 'contain';
+  heroPosition?: string;
   blocks: ArticleBlock[];
   relatedBookIds: string[];
 }

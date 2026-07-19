@@ -1814,3 +1814,36 @@
   .article-hero-visual__archive { left: .7rem; bottom: .7rem; }
 }
 
+
+
+.article-hero-visual__frame.is-contained {
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.article-hero-visual__frame.is-contained .article-hero-visual__backdrop {
+  position: absolute;
+  inset: -8%;
+  z-index: -1;
+  width: 116%;
+  height: 116%;
+  object-fit: cover;
+  filter: blur(24px) saturate(.72) brightness(.46);
+  transform: scale(1.06);
+}
+
+.article-hero-visual__frame.is-contained .article-hero-visual__main {
+  width: auto;
+  height: 92%;
+  max-width: 55%;
+  object-fit: contain;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .42);
+}
+
+@media (max-width: 680px) {
+  .article-hero-visual__frame.is-contained .article-hero-visual__main {
+    height: 88%;
+    max-width: 68%;
+  }
+}

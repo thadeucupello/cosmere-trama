@@ -1,5 +1,8 @@
 import type { Article, ArticleCategory } from '../types';
 import rosharWayOfKings from '../assets/editorial/roshar-way-of-kings.jpg';
+import readingStormlightArt from '../assets/editorial/reading-stormlight-art.jpg';
+import cosmereRhythmOfWar from '../assets/editorial/cosmere-rhythm-of-war.jpg';
+import mistbornWellOfAscension from '../assets/editorial/mistborn-well-of-ascension.jpg';
 
 export const articleCategories: { id: 'todos' | ArticleCategory; label: string }[] = [
   { id: 'todos', label: 'Todos' },
@@ -14,6 +17,12 @@ export const articles: Article[] = [
     slug: 'por-onde-comecar-brandon-sanderson',
     title: 'Por onde começar a ler Brandon Sanderson?',
     eyebrow: 'Guia de leitura', category: 'comece-aqui', featured: true, symbol: '✦',
+    heroImage: readingStormlightArt,
+    heroAlt: 'Uma figura observa as montanhas de Roshar enquanto uma tempestade se forma no horizonte.',
+    imageCredit: 'Michael Whelan',
+    imageCreditUrl: 'https://www.michaelwhelan.com/stormlight/',
+    imageSource: 'Ilustração da série The Stormlight Archive',
+    heroPosition: 'center 48%',
     excerpt: 'Não existe uma única porta de entrada para a Cosmere. Descubra a história certa para o tipo de aventura que você procura.',
     publishedAt: '19 de julho de 2026', readingTime: '6 min de leitura',
     relatedBookIds: ['mistborn-1', 'warbreaker', 'stormlight-1'],
@@ -35,6 +44,12 @@ export const articles: Article[] = [
     slug: 'o-que-e-a-cosmere',
     title: 'O que é a Cosmere e como seus mundos se conectam?',
     eyebrow: 'O universo compartilhado', category: 'cosmere', symbol: '◈',
+    heroImage: cosmereRhythmOfWar,
+    heroAlt: 'Duas figuras atravessam uma paisagem fantástica iluminada por formas geométricas e um céu azul profundo.',
+    imageCredit: 'Michael Whelan',
+    imageCreditUrl: 'https://www.michaelwhelan.com/shop/rhythm-of-war/',
+    imageSource: 'Arte de capa de Rhythm of War',
+    heroPosition: 'center 52%',
     excerpt: 'Scadrial, Roshar, Nalthis e outros planetas pertencem a uma mesma galáxia literária. Entenda a ideia sem spoilers.',
     publishedAt: '19 de julho de 2026', readingTime: '7 min de leitura',
     relatedBookIds: ['mistborn-1', 'stormlight-1', 'warbreaker'],
@@ -54,6 +69,12 @@ export const articles: Article[] = [
     slug: 'mistborn-guia-scadrial',
     title: 'Mistborn: o que saber antes de entrar em Scadrial',
     eyebrow: 'Guia sem spoilers', category: 'scadrial', symbol: '●',
+    heroImage: mistbornWellOfAscension,
+    heroAlt: 'Uma nascida da bruma salta sobre as torres de uma cidade iluminada por um céu alaranjado.',
+    imageCredit: 'Danny Schlitz',
+    imageCreditUrl: 'https://www.dannyschlitz.com/work/mistborn-brandon-sanderson',
+    imageSource: 'Arte de capa de The Well of Ascension, edição de 2023',
+    heroFit: 'contain',
     excerpt: 'Cinzas, metais e uma rebelião impossível. Um guia para chegar a O Império Final sabendo apenas o necessário.',
     publishedAt: '19 de julho de 2026', readingTime: '6 min de leitura',
     relatedBookIds: ['mistborn-1', 'mistborn-2', 'mistborn-3'],

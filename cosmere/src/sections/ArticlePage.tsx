@@ -23,8 +23,9 @@ export default function ArticlePage() {
         <div className="article-header__meta"><span>Por Editora Trama</span><span>{article.publishedAt}</span><span>{article.readingTime}</span></div>
         {article.heroImage && (
           <figure className="article-hero-visual">
-            <div className="article-hero-visual__frame">
-              <img src={article.heroImage} alt={article.heroAlt ?? ''} />
+            <div className={`article-hero-visual__frame ${article.heroFit === 'contain' ? 'is-contained' : ''}`}>
+              {article.heroFit === 'contain' && <img className="article-hero-visual__backdrop" src={article.heroImage} alt="" aria-hidden="true" />}
+              <img className="article-hero-visual__main" src={article.heroImage} alt={article.heroAlt ?? ''} style={{ objectPosition: article.heroPosition }} />
               <span className="article-hero-visual__archive" aria-hidden="true">ARQUIVO · {article.symbol}</span>
             </div>
             {article.imageCredit && (
