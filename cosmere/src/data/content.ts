@@ -20,6 +20,10 @@ export const readingPaths: ReadingPath[] = [
     title: 'A porta de entrada',
     audience: 'Para quem vai conhecer Brandon Sanderson pela primeira vez.',
     recommendedLabel: 'Comece por Mistborn',
+    tagline: 'Comece com cinzas, metais e uma rebelião impossível.',
+    commitment: '5 etapas · uma trilogia completa',
+    symbol: '✦',
+    firstBook: 'O Império Final',
     steps: [
       'O Império Final',
       'O Poço da Ascensão',
@@ -33,6 +37,10 @@ export const readingPaths: ReadingPath[] = [
     title: 'A grande saga',
     audience: 'Para quem quer mergulhar de imediato em uma fantasia monumental.',
     recommendedLabel: 'Viaje para Roshar',
+    tagline: 'Enfrente as tempestades e descubra os juramentos de Roshar.',
+    commitment: '5 volumes · uma saga monumental',
+    symbol: '◇',
+    firstBook: 'O Caminho dos Reis',
     steps: [
       'O Caminho dos Reis',
       'Palavras de Radiância',
@@ -46,6 +54,10 @@ export const readingPaths: ReadingPath[] = [
     title: 'Uma história completa',
     audience: 'Para quem prefere começar por aventuras independentes.',
     recommendedLabel: 'Descubra os livros únicos',
+    tagline: 'Conheça o Cosmere em aventuras que cabem em um único volume.',
+    commitment: '4 histórias · aventuras independentes',
+    symbol: '◈',
+    firstBook: 'Warbreaker: o sopro dos Deuses',
     steps: [
       'Warbreaker: o sopro dos Deuses',
       'Tress, a garota do Mar Esmeralda',
@@ -58,6 +70,10 @@ export const readingPaths: ReadingPath[] = [
     title: 'O mapa inteiro',
     audience: 'Para quem quer acompanhar as conexões entre todos os mundos.',
     recommendedLabel: 'Siga a rota Cosmere da Trama',
+    tagline: 'Atravesse mundos e veja conexões surgirem a cada nova leitura.',
+    commitment: '7 etapas · conexões entre mundos',
+    symbol: '◎',
+    firstBook: 'O Império Final',
     steps: [
       'Mistborn: a Trilogia Original',
       'Warbreaker: o sopro dos Deuses',
