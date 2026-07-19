@@ -1,9 +1,9 @@
 import { FormEvent, useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
-import { subscribeToNewsletter } from '../lib/newsletter';
+import { NEWSLETTER_ENDPOINT, subscribeToNewsletter } from '../lib/newsletter';
 import { socialLinks } from '../data/social';
 
-type FormState = 'idle' | 'loading' | 'success' | 'error' | 'unavailable';
+type FormState = 'idle' | 'loading' | 'success' | 'error';
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -34,10 +34,12 @@ export default function Newsletter() {
 
     if (result.status === 'ok') {
       setState('success');
-    } else if (result.status === 'not-configured') {
-      setState('unavailable');
     } else {
-      setError(result.message);
+      setError(
+        result.status === 'not-configured'
+          ? 'Nosso formulário ainda está a caminho.'
+          : result.message
+      );
       setState('error');
     }
   };
@@ -46,18 +48,19 @@ export default function Newsletter() {
     return (
       <NewsletterShell>
         <p className="newsletter__success" role="status">
-          Inscrição confirmada! Fique de olho no seu e-mail para não perder nenhuma novidade da Trama.
+          Sua jornada continua. Inscrição confirmada! Fique de olho no seu e-mail para acompanhar
+          os próximos lançamentos e descobertas da Trama.
         </p>
       </NewsletterShell>
     );
   }
 
-  if (state === 'unavailable') {
+  if (!NEWSLETTER_ENDPOINT) {
     return (
       <NewsletterShell>
         <p className="newsletter__success" role="status">
-          Nosso formulário de novidades por e-mail ainda está a caminho. Enquanto isso, você pode acompanhar
-          os lançamentos da Trama nas redes sociais:
+          Nosso canal de novidades por e-mail ainda está sendo preparado. Enquanto isso, acompanhe
+          a Trama nas redes sociais e não perca os próximos lançamentos:
         </p>
         {socialLinks.length > 0 && (
           <div className="newsletter__social">
@@ -92,7 +95,7 @@ export default function Newsletter() {
             required
           />
           <button type="submit" className="btn btn-primary" disabled={state === 'loading'}>
-            {state === 'loading' ? 'Enviando…' : 'Receber novidades'}
+            {state === 'loading' ? 'Enviando…' : 'Quero acompanhar o Cosmere'}
           </button>
         </div>
 
@@ -113,7 +116,9 @@ export default function Newsletter() {
           </p>
         )}
 
-        <p className="newsletter__privacy">Respeitamos sua privacidade.</p>
+        <p className="newsletter__privacy">
+          Respeitamos sua privacidade. Você poderá cancelar o recebimento quando quiser.
+        </p>
       </form>
     </NewsletterShell>
   );
@@ -123,11 +128,19 @@ function NewsletterShell({ children }: { children: React.ReactNode }) {
   return (
     <section id="newsletter" className="section newsletter" aria-label="Newsletter">
       <div className="container newsletter__inner">
+        <span className="newsletter__symbol" aria-hidden="true">✦</span>
         <SectionHeading
           align="center"
-          title="Continue explorando o Cosmere."
-          subtitle="Receba novidades sobre novos lançamentos, eventos e conteúdos especiais da Trama."
+          title="Alguns segredos levam tempo para serem revelados."
+          subtitle="Receba novidades sobre lançamentos, pré-vendas e novas viagens pelo Cosmere diretamente da Trama."
         />
+
+        <ul className="newsletter__benefits" aria-label="O que você receberá">
+          <li>Novos lançamentos</li>
+          <li>Abertura de pré-vendas</li>
+          <li>Conteúdos e novidades do Cosmere</li>
+        </ul>
+
         {children}
       </div>
     </section>
