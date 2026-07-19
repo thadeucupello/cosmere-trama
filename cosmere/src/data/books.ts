@@ -236,7 +236,7 @@ export const books: Book[] = [
     series: 'Warbreaker',
     world: 'nalthis',
     order: 1,
-    description: 'Em Nalthis, cor e fôlego são a base de uma magia única — e de uma história completa em um único volume.',
+    description: 'Siri foi preparada para quase tudo, menos para se casar com um deus. Quando ocupa inesperadamente o lugar da irmã, ela entra em uma corte repleta de cores, intrigas e perigos, enquanto Vivenna parte para salvá-la e descobre que o mundo fora de Idris não é como imaginava.',
     status: 'published',
     purchaseUrl: 'https://www.lojaeditoratrama.com.br/warbreaker-o-sopro-dos-deuses',
     cover: coverWarbreaker,
