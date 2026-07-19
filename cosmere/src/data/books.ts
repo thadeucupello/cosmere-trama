@@ -270,7 +270,7 @@ export const books: Book[] = [
     series: 'Projetos Secretos',
     world: 'secret-projects',
     order: 3,
-    description: 'Perseguido por uma força implacável, um homem conhecido como Nômade chega a Canticle, um planeta onde permanecer sob a luz do sol significa morrer. Para sobreviver, cidades inteiras precisam continuar em movimento, sempre fugindo do amanhecer. Uma aventura veloz, intensa e profundamente conectada ao futuro da Cosmere.',
+    description: 'Perseguido por uma força implacável, um homem conhecido como Nômade chega a Cântico, um planeta onde permanecer sob a luz do sol significa morrer. Para sobreviver, cidades inteiras precisam continuar em movimento, sempre fugindo do amanhecer. Uma aventura veloz, intensa e profundamente conectada ao futuro da Cosmere.',
     status: 'published',
     purchaseUrl: 'https://www.lojaeditoratrama.com.br/o-homem-iluminado',
     cover: coverHomemIluminado,

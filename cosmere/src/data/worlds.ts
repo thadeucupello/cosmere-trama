@@ -69,7 +69,7 @@ export const orbitCompanionWorlds: OrbitCompanionWorld[] = [
   },
   {
     id: 'canticle',
-    name: 'Canticle',
+    name: 'Cântico',
     teaser:
       'Um ambiente extremo, onde a luz do sol é uma ameaça constante e seus habitantes nunca podem parar de se mover — o palco de O Homem Iluminado.',
     accent: '#A8433A',
