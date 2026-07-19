@@ -321,12 +321,21 @@
   margin-top: 2.5rem;
 }
 
+.path-selector .section-heading {
+  font-size: clamp(1.75rem, 1.55rem + .9vw, 2.4rem);
+}
+
+.path-selector .section-sub {
+  max-width: 52ch;
+  font-size: var(--step-base);
+}
+
 .path-selector__card {
   text-align: left;
   background: var(--color-elevated);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1.25rem;
   cursor: pointer;
   transition: border-color var(--dur-fast) var(--ease-standard), transform var(--dur-fast) var(--ease-standard);
   min-height: 44px;
@@ -344,8 +353,12 @@
 
 .path-selector__prompt {
   font-family: var(--font-display);
-  font-size: var(--step-lg);
+  font-size: clamp(.96rem, .92rem + .16vw, 1.08rem);
   color: var(--color-text-primary);
+}
+
+.reading-journey {
+  padding-top: clamp(8.5rem, 17vh, 11rem);
 }
 
 .path-selector__recommendation {
