@@ -61,7 +61,8 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="hero__subtitle"
         >
-          O guia oficial para começar sua jornada no universo criado por Brandon Sanderson.
+          Mundos distintos. Histórias que se encontram. Um universo maior do que você imagina, criado por Brandon
+          Sanderson.
         </motion.p>
 
         <motion.div
@@ -70,7 +71,7 @@ export default function Hero() {
           transition={{ duration: 1.1, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
         >
           <button type="button" className="btn btn-primary hero__cta" onClick={scrollNext}>
-            Começar a jornada
+            Comece sua jornada
           </button>
         </motion.div>
 
