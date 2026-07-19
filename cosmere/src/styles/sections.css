@@ -445,6 +445,8 @@
   font-size: var(--step-lg);
   margin-top: 1.5rem;
   max-width: 65ch;
+  display: grid;
+  gap: 1rem;
 }
 
 .world-section__subheading {
