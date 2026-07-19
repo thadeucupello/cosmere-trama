@@ -10,6 +10,8 @@ import type { PathId } from '../types';
 export default function ReadingJourney() {
   const [selectedPath, setSelectedPath] = useLocalStorage<PathId | null>('cosmere:selected-path', null);
   const navigate = useNavigate();
+  const selectedRoute = readingPaths.find((path) => path.id === selectedPath);
+
   usePageMeta(
     'Sua Jornada | Descubra o Cosmere — Editora Trama',
     'Escolha sua trilha de leitura recomendada para começar no universo de Brandon Sanderson.'
@@ -36,15 +38,44 @@ export default function ReadingJourney() {
           ))}
         </div>
 
+        {selectedRoute && (
+          <div className="reading-journey__selection" aria-live="polite">
+            <span className="reading-journey__selection-eyebrow">Sua jornada foi escolhida</span>
+            <h2>Agora, basta abrir o primeiro livro.</h2>
+            <p>
+              Seu primeiro destino é <strong>{selectedRoute.firstBook}</strong>. A partir dele,
+              cada nova leitura revelará um pouco mais deste universo.
+            </p>
+            <button type="button" className="btn btn-primary" onClick={() => navigate('/biblioteca')}>
+              Encontrar {selectedRoute.firstBook} na Biblioteca
+            </button>
+          </div>
+        )}
+
+        <aside className="reading-journey__connections">
+          <span aria-hidden="true">✦</span>
+          <div>
+            <h2>As conexões aparecem durante o caminho.</h2>
+            <p>
+              Você não precisa conhecer todo o Cosmere para aproveitar cada história. Mas, quanto
+              mais mundos visitar, mais detalhes começará a reconhecer. Personagens, objetos e
+              acontecimentos atravessam essas páginas de maneiras nem sempre evidentes.
+            </p>
+          </div>
+        </aside>
+
         <p className="reading-journey__disclaimer">
-          Estas rotas são convites, não regras. Cada série conta uma história própria e pode ser lida separadamente. Conforme você avançar, as conexões entre os mundos começarão a se revelar.
+          Estas rotas são convites, não regras. Cada série conta uma história própria e pode ser
+          lida separadamente.
         </p>
 
-        <div className="world-section__actions" style={{ justifyContent: 'center' }}>
-          <button type="button" className="btn btn-primary" onClick={() => navigate('/biblioteca')}>
-            Ver a biblioteca completa da Trama
-          </button>
-        </div>
+        {!selectedRoute && (
+          <div className="world-section__actions" style={{ justifyContent: 'center' }}>
+            <button type="button" className="btn btn-primary" onClick={() => navigate('/biblioteca')}>
+              Ver a biblioteca completa da Trama
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
