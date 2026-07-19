@@ -9,18 +9,21 @@ const statusLabel: Record<Book['status'], string> = {
 
 interface Props {
   book: Book;
+  highlighted?: boolean;
 }
 
-export default function BookCard({ book }: Props) {
+export default function BookCard({ book, highlighted = false }: Props) {
   return (
     <motion.article
       id={book.id}
-      className="book-card"
+      className={`book-card ${highlighted ? 'book-card--highlighted' : ''}`}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
     >
+      {highlighted && <span className="book-card__journey-badge">Seu primeiro livro</span>}
+
       <div className="book-card__cover">
         {book.cover ? (
           <img src={book.cover} alt={`Capa de ${book.title}`} loading="lazy" width={240} height={360} />
@@ -30,6 +33,9 @@ export default function BookCard({ book }: Props) {
           </div>
         )}
         <span className={`book-card__status book-card__status--${book.status}`}>{statusLabel[book.status]}</span>
+        {book.isPartOfCosmere === false && (
+          <span className="book-card__universe-badge">Fora do Cosmere</span>
+        )}
         {book.coverIsProvisional && (
           <span className="book-card__provisional">Capa provisória (edição internacional)</span>
         )}
