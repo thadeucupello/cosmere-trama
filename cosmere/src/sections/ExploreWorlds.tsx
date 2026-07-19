@@ -7,7 +7,7 @@ export default function ExploreWorlds() {
     <section id="mundos" className="section explore-worlds" aria-label="Explorar os mundos">
       <div className="container">
         <SectionHeading
-          align="center"
+          align="left"
           eyebrow="Próximos destinos"
           title="Para onde sua jornada leva você?"
           subtitle="Cinzas, tempestades, cores e caminhos inesperados. Cada destino guarda uma nova forma de imaginar a fantasia."

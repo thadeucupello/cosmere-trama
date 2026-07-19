@@ -29,7 +29,7 @@ export default function PathSelector() {
     <section id="caminho" className="section path-selector" aria-label="Por onde você quer começar">
       <div className="container">
         <SectionHeading
-          align="center"
+          align="left"
           title="Por onde você quer começar?"
           subtitle="Não existe uma única porta de entrada para a Cosmere. Escolha o tipo de história que mais chama você."
         />
