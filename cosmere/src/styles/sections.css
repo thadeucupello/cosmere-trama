@@ -1382,3 +1382,106 @@
     justify-content: center;
   }
 }
+
+
+/* ── Encerramento editorial ───────────────────────────────────────── */
+.newsletter {
+  position: relative;
+  background: radial-gradient(circle at 50% 30%, rgba(201, 164, 98, 0.08), transparent 55%);
+}
+
+.newsletter__symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(201, 164, 98, 0.55);
+  border-radius: 50%;
+  color: var(--color-gold);
+  font-size: var(--step-xl);
+  box-shadow: 0 0 28px rgba(201, 164, 98, 0.12);
+}
+
+.newsletter__benefits {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.newsletter__benefits li {
+  position: relative;
+  padding: 0.55rem 1rem 0.55rem 1.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: var(--step-xs);
+  background: var(--color-elevated);
+}
+
+.newsletter__benefits li::before {
+  content: '✦';
+  position: absolute;
+  left: 0.75rem;
+  color: var(--color-gold);
+}
+
+.newsletter__form {
+  margin-top: 2rem;
+}
+
+.newsletter__success {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-elevated);
+}
+
+.site-footer__ending {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  padding-inline: 1rem;
+}
+
+.site-footer__ending span {
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+
+.site-footer__ending p {
+  color: var(--color-text-secondary);
+}
+
+.site-footer__ending strong {
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+.site-footer__column-title {
+  margin-bottom: 0.85rem;
+  color: var(--color-gold);
+  font-size: var(--step-xs);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .newsletter__benefits {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .newsletter__benefits li {
+    text-align: left;
+  }
+}
