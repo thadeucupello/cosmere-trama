@@ -17,38 +17,60 @@ export const navItems: NavItem[] = [
 export const readingPaths: ReadingPath[] = [
   {
     id: 'aventura',
-    title: 'Primeira viagem',
-    audience: 'Para quem nunca leu Brandon Sanderson.',
-    recommendedLabel: 'Mistborn, a Trilogia Original',
-    steps: ['O Império Final', 'O Poço da Ascensão', 'O Herói das Eras', 'Continuar explorando o Cosmere'],
+    title: 'A porta de entrada',
+    audience: 'Para quem vai conhecer Brandon Sanderson pela primeira vez.',
+    recommendedLabel: 'Comece por Mistborn',
+    steps: [
+      'O Império Final',
+      'O Poço da Ascensão',
+      'O Herói das Eras',
+      'Warbreaker: o sopro dos Deuses',
+      'Tress, a garota do Mar Esmeralda',
+    ],
   },
   {
     id: 'epico',
-    title: 'Fantasia épica',
-    audience: 'Para quem busca uma saga monumental.',
-    recommendedLabel: 'Relatos da Guerra das Tempestades',
-    steps: ['O Caminho dos Reis', 'Palavras de Radiância', 'Sacramentadora', 'Ritmo da Guerra', 'Vento e Verdade'],
+    title: 'A grande saga',
+    audience: 'Para quem quer mergulhar de imediato em uma fantasia monumental.',
+    recommendedLabel: 'Viaje para Roshar',
+    steps: [
+      'O Caminho dos Reis',
+      'Palavras de Radiância',
+      'Sacramentadora',
+      'Ritmo da Guerra',
+      'Vento e Verdade (novembro de 2026)',
+    ],
   },
   {
     id: 'unico',
-    title: 'Livro único',
-    audience: 'Para quem quer uma história completa em um só volume.',
-    recommendedLabel: 'Warbreaker',
-    steps: ['Warbreaker', 'Continuar explorando o Cosmere'],
+    title: 'Uma história completa',
+    audience: 'Para quem prefere começar por aventuras independentes.',
+    recommendedLabel: 'Descubra os livros únicos',
+    steps: [
+      'Warbreaker: o sopro dos Deuses',
+      'Tress, a garota do Mar Esmeralda',
+      'Yumi e o Pintor de Pesadelos',
+      'O Homem Iluminado',
+    ],
   },
   {
     id: 'completo',
-    title: 'Explorar tudo',
-    audience: 'Para quem pretende mergulhar em todo o Cosmere.',
-    recommendedLabel: 'Guia completo',
-    steps: ['Mistborn — Trilogia Original', 'Relatos da Guerra das Tempestades', 'Warbreaker', 'Mistborn — Era Dois', 'Projetos Secretos'],
+    title: 'O mapa inteiro',
+    audience: 'Para quem quer acompanhar as conexões entre todos os mundos.',
+    recommendedLabel: 'Siga a rota Cosmere da Trama',
+    steps: [
+      'Mistborn: a Trilogia Original',
+      'Warbreaker: o sopro dos Deuses',
+      'Relatos da Guerra das Tempestades, volumes 1 a 4',
+      'Mistborn: Era Dois',
+      'Mistborn: História Secreta',
+      'Projetos Secretos',
+      'Vento e Verdade (novembro de 2026)',
+    ],
   },
 ];
 
 // Update this object to change the promotional highlight without touching code.
-// TODO(Trama): confirme a data oficial de lançamento de Vento e Verdade
-// antes de publicar — "novembro de 2026" foi o texto sugerido, mas ainda
-// não foi confirmado em lojaeditoratrama.com.br.
 export const campaignHighlight: CampaignHighlight = {
   eyebrow: 'Em breve',
   headline: 'Vento e Verdade chega em novembro de 2026',
