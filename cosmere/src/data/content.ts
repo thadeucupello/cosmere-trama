@@ -9,6 +9,7 @@ export const navItems: NavItem[] = [
   { id: 'roshar', label: 'Roshar', route: '/roshar' },
   { id: 'nalthis', label: 'Nalthis', route: '/nalthis' },
   { id: 'projetos-secretos', label: 'Projetos Secretos', route: '/projetos-secretos' },
+  { id: 'arquivos', label: 'Arquivos da Cosmere', route: '/arquivos' },
   { id: 'jornada', label: 'Sua Jornada', route: '/jornada' },
   { id: 'biblioteca', label: 'Biblioteca Trama', route: '/biblioteca' },
   { id: 'newsletter', label: 'Newsletter', route: '.', hash: 'newsletter' },
