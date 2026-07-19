@@ -1,4 +1,5 @@
 import type { Article, ArticleCategory } from '../types';
+import rosharWayOfKings from '../assets/editorial/roshar-way-of-kings.jpg';
 
 export const articleCategories: { id: 'todos' | ArticleCategory; label: string }[] = [
   { id: 'todos', label: 'Todos' },
@@ -74,6 +75,11 @@ export const articles: Article[] = [
     slug: 'roshar-guia-sem-spoilers',
     title: 'Roshar: um guia sem spoilers para a Guerra das Tempestades',
     eyebrow: 'Antes da primeira ponte', category: 'roshar', symbol: '◇',
+    heroImage: rosharWayOfKings,
+    heroAlt: 'Um guerreiro observa uma tempestade monumental avançando sobre as planícies de Roshar.',
+    imageCredit: 'Michael Whelan',
+    imageCreditUrl: 'https://www.michaelwhelan.com/shop/way-of-kings/',
+    imageSource: 'Arte de capa de The Way of Kings',
     excerpt: 'Tempestades, spren e juramentos. O essencial para começar O Caminho dos Reis sem perder o prazer da descoberta.',
     publishedAt: '19 de julho de 2026', readingTime: '7 min de leitura',
     relatedBookIds: ['stormlight-1', 'stormlight-2', 'stormlight-3'],

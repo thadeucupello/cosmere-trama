@@ -1795,3 +1795,21 @@
     text-align: left;
   }
 }
+
+
+/* ── Sistema visual editorial dos Arquivos ───────────────────────── */
+.article-hero-visual { margin: clamp(2.5rem, 6vw, 4.5rem) 0 0; }
+.article-hero-visual__frame { position: relative; aspect-ratio: 16 / 7; overflow: hidden; border: 1px solid rgba(201,164,98,.36); border-radius: var(--radius-lg); background: var(--color-elevated); box-shadow: 0 24px 70px rgba(0,0,0,.38); }
+.article-hero-visual__frame::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(5,7,13,.3),transparent 35%,transparent 70%,rgba(5,7,13,.25)),linear-gradient(0deg,rgba(5,7,13,.5),transparent 42%); pointer-events: none; }
+.article-hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; filter: saturate(.88) contrast(1.04); }
+.article-hero-visual__archive { position: absolute; z-index: 1; left: 1rem; bottom: 1rem; padding: .4rem .65rem; border: 1px solid rgba(201,164,98,.58); border-radius: 999px; background: rgba(5,7,13,.66); backdrop-filter: blur(8px); color: var(--color-gold); font-size: .65rem; font-weight: 700; letter-spacing: .12em; }
+.article-hero-visual figcaption { display: flex; justify-content: space-between; gap: 1rem; padding: .65rem .2rem 0; color: var(--color-text-muted); font-size: .7rem; }
+.article-hero-visual figcaption a { color: var(--color-text-secondary); text-underline-offset: 3px; }
+.article-hero-visual figcaption a:hover { color: var(--color-gold); }
+@media (max-width: 680px) {
+  .article-hero-visual { margin-top: 2rem; }
+  .article-hero-visual__frame { aspect-ratio: 4 / 3; border-radius: var(--radius-md); }
+  .article-hero-visual img { object-position: 64% center; }
+  .article-hero-visual figcaption { align-items: flex-start; flex-direction: column; gap: .15rem; padding-top: .55rem; }
+  .article-hero-visual__archive { left: .7rem; bottom: .7rem; }
+}

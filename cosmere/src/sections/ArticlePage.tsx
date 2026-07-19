@@ -21,6 +21,20 @@ export default function ArticlePage() {
         <Link className="back-to-map" to="/arquivos">← Todos os arquivos</Link>
         <p className="eyebrow">{article.eyebrow}</p><h1>{article.title}</h1><p className="article-header__dek">{article.excerpt}</p>
         <div className="article-header__meta"><span>Por Editora Trama</span><span>{article.publishedAt}</span><span>{article.readingTime}</span></div>
+        {article.heroImage && (
+          <figure className="article-hero-visual">
+            <div className="article-hero-visual__frame">
+              <img src={article.heroImage} alt={article.heroAlt ?? ''} />
+              <span className="article-hero-visual__archive" aria-hidden="true">ARQUIVO · {article.symbol}</span>
+            </div>
+            {article.imageCredit && (
+              <figcaption>
+                <span>{article.imageSource}</span>
+                <span>Ilustração: <a href={article.imageCreditUrl} target="_blank" rel="noreferrer">{article.imageCredit}</a></span>
+              </figcaption>
+            )}
+          </figure>
+        )}
       </div></header>
 
       <article className="article-body container">

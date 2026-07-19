@@ -26,6 +26,11 @@ export interface Article {
   readingTime: string;
   featured?: boolean;
   symbol: string;
+  heroImage?: string;
+  heroAlt?: string;
+  imageCredit?: string;
+  imageCreditUrl?: string;
+  imageSource?: string;
   blocks: ArticleBlock[];
   relatedBookIds: string[];
 }
