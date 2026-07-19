@@ -490,6 +490,32 @@
   font-size: var(--step-sm);
 }
 
+.world-section__future-note {
+  max-width: 60ch;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: linear-gradient(110deg, var(--accent-soft), transparent);
+  color: var(--color-text-secondary);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.world-section__future-eyebrow {
+  color: var(--accent);
+  font-size: var(--step-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.world-section__future-note h3 {
+  color: var(--color-text-primary);
+  font-size: var(--step-lg);
+}
+
+
 
 .world-section__actions {
   display: flex;
