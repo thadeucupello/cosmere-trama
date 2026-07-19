@@ -462,6 +462,11 @@
   max-width: 60ch;
 }
 
+.world-section__note--expanded {
+  display: grid;
+  gap: 1rem;
+}
+
 .world-section__actions {
   display: flex;
   flex-wrap: wrap;
@@ -470,12 +475,42 @@
 }
 
 .world-transition-caption {
-  margin: 3rem 0;
+  width: 100%;
+  margin: clamp(4rem, 9vw, 7rem) 0;
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) auto minmax(40px, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
   text-align: center;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: var(--step-lg);
-  color: var(--color-text-muted);
+  font-size: clamp(var(--step-lg), 3vw, var(--step-2xl));
+  color: var(--color-gold);
+  text-shadow: 0 0 24px rgba(201, 164, 98, 0.24);
+}
+
+.world-transition-caption::before,
+.world-transition-caption::after {
+  content: '';
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+  opacity: 0.55;
+}
+
+.world-transition-caption::after {
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+@media (max-width: 600px) {
+  .world-transition-caption {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+  }
+
+  .world-transition-caption::before,
+  .world-transition-caption::after {
+    display: none;
+  }
 }
 
 .magic-card-grid {
