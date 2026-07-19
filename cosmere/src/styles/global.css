@@ -50,6 +50,7 @@
 html {
   background: var(--color-void);
   scroll-behavior: smooth;
+  scroll-padding-top: 7.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -117,6 +118,10 @@ img {
 .section {
   position: relative;
   padding-block: clamp(4rem, 9.5vh, 7rem);
+}
+
+.section[id] {
+  scroll-margin-top: 7.5rem;
 }
 
 .eyebrow {

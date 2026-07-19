@@ -1397,6 +1397,16 @@
   background: radial-gradient(circle at 50% 30%, rgba(201, 164, 98, 0.08), transparent 55%);
 }
 
+.newsletter .section-heading {
+  max-width: 14ch;
+  font-size: clamp(1.8rem, 1.55rem + 1.1vw, 2.5rem);
+}
+
+.newsletter .section-sub {
+  max-width: 54ch;
+  font-size: var(--step-base);
+}
+
 .newsletter__symbol {
   display: inline-flex;
   align-items: center;
@@ -1518,6 +1528,7 @@
 @media (max-width: 560px) {
   .newsletter .section-heading {
     max-width: 13ch;
+    font-size: clamp(1.7rem, 1.45rem + 1.2vw, 2rem);
   }
 
   .cosmere-map .section-sub {
