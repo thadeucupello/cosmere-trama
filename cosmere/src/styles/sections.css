@@ -592,7 +592,14 @@
 
 /* ── World sections ───────────────────────────────────────────────── */
 .world-section {
+  padding-top: clamp(9rem, 18vh, 11rem);
   background: linear-gradient(180deg, transparent, var(--accent-soft) 30%, transparent 90%);
+}
+
+@media (max-width: 680px) {
+  .world-section {
+    padding-top: 8.5rem;
+  }
 }
 
 .world-section__intro {

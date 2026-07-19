@@ -6,7 +6,7 @@ interface Props {
   label?: string;
 }
 
-export default function BackToMapLink({ to = '/#cosmere', label = 'Voltar ao mapa do Cosmere' }: Props) {
+export default function BackToMapLink({ to = '/#cosmere', label = 'Voltar ao mapa da Cosmere' }: Props) {
   return (
     <Link to={to} className="back-to-map">
       <ArrowLeft size={16} aria-hidden="true" />
