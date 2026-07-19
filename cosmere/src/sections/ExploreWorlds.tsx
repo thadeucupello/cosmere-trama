@@ -17,7 +17,7 @@ export default function ExploreWorlds() {
           {worlds.map((world) => (
             <Link
               key={world.id}
-              to={`/${world.id}`}
+              to={world.id === 'secret-projects' ? '/projetos-secretos' : `/${world.id}`}
               className="explore-worlds__card"
               style={{ ['--accent' as string]: world.accent, ['--accent-soft' as string]: world.accentSoft }}
             >
