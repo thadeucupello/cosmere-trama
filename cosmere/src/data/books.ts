@@ -219,10 +219,6 @@ export const books: Book[] = [
     world: 'roshar',
     order: 5,
     description: 'O quinto volume reúne as jornadas, os juramentos e os conflitos construídos desde O Caminho dos Reis. Um momento decisivo para Roshar e o encerramento do primeiro grande arco de Relatos da Guerra das Tempestades.',
-    // TODO(Trama): ainda não localizado à venda em lojaeditoratrama.com.br
-    // (conferido em jul/2026) — atualize purchaseUrl e status assim que a
-    // edição brasileira for confirmada. A capa exibida é a edição
-    // internacional (inglês), usada apenas como referência temporária.
     status: 'coming-soon',
     cover: coverWindAndTruthProvisional,
     coverIsProvisional: true,
