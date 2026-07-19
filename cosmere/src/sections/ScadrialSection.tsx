@@ -15,9 +15,20 @@ const eraTwoBooks = scadrialBooks.filter((b) => b.series === 'Mistborn — Era D
 const secretHistory = scadrialBooks.find((b) => b.series === 'Mistborn — História Secreta');
 
 const magicSystems = [
-  { title: 'Allomancia', description: 'Um sistema em que metais específicos concedem habilidades únicas a quem os consome.' },
-  { title: 'Feruquimia', description: 'Uma arte baseada em armazenar atributos pessoais para utilizá-los mais tarde.' },
-  { title: 'Hemalurgia', description: 'Uma arte misteriosa e perigosa cuja verdadeira natureza é revelada ao longo dos livros.' },
+  {
+    title: 'Alomancia',
+    description: 'Metais ingeridos e “queimados” despertam habilidades extraordinárias. Cada metal concede um poder diferente.',
+  },
+  {
+    title: 'Feruquimia',
+    description:
+      'Força, velocidade, memória e outros atributos podem ser armazenados em metais para serem recuperados quando necessário.',
+  },
+  {
+    title: 'Hemalurgia',
+    description:
+      'Uma prática proibida que utiliza os metais de uma forma muito mais sombria. Seus verdadeiros segredos são revelados ao longo da saga.',
+  },
 ];
 
 export default function ScadrialSection() {
@@ -38,12 +49,32 @@ export default function ScadrialSection() {
     >
       <div className="container">
         <BackToMapLink />
-        <SectionHeading eyebrow="Mundo" title={world.name} subtitle={world.tagline} />
+        <SectionHeading
+          eyebrow="O mundo de Mistborn"
+          title={world.name}
+          subtitle="Um mundo forjado entre cinzas e névoas, onde o poder dos metais pode mudar o destino de impérios."
+        />
 
-        <p className="world-section__intro">
-          Em Scadrial, cinzas caem lentamente do céu e a névoa cobre as noites. É um mundo onde metais guardam
-          poderes extraordinários e onde impérios inteiros já se ergueram — e caíram.
-        </p>
+        <div className="world-section__intro">
+          <p>
+            Scadrial é o palco de uma saga construída para atravessar eras. Na Trilogia Original, você encontrará
+            um império coberto por cinzas, uma sociedade dividida pela opressão e um grupo de ladrões disposto a
+            realizar o golpe impossível: derrubar um governante imortal. É uma história de revolução, poder e
+            sobrevivência, conduzida por uma jovem que ainda está descobrindo do que é capaz.
+          </p>
+          <p>
+            Trezentos anos depois, a Era Dois acompanha uma Scadrial em plena transformação. Ferrovias, armas,
+            grandes cidades e novas tecnologias dividem espaço com a Alomancia e a Feruquimia. A fantasia épica
+            ganha elementos de investigação, aventura de fronteira e romance policial, enquanto as consequências
+            da primeira trilogia continuam moldando o mundo.
+          </p>
+          <p>
+            E a história ainda não terminou. Brandon Sanderson já trabalha em <em>Ghostbloods</em>, a terceira era
+            de Mistborn, ambientada aproximadamente cinquenta anos depois e inspirada nos anos 1980 e no início da
+            era da computação. Mais adiante, o planejamento do autor levará Scadrial até a era espacial. Assim,
+            Mistborn acompanhará um mesmo mundo desde um império de cinzas até um futuro de ficção científica.
+          </p>
+        </div>
 
         <h3 className="world-section__subheading">Sistemas de magia</h3>
         <div className="magic-card-grid">
