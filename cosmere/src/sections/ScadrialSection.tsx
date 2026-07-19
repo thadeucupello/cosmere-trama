@@ -11,7 +11,7 @@ import { usePageMeta } from '../hooks/usePageMeta';
 const world = getWorld('scadrial');
 const scadrialBooks = getBooksByWorld('scadrial');
 const originalTrilogyGroup = scadrialBooks.filter((b) => b.series === 'Mistborn: a Trilogia Original');
-const eraTwoBooks = scadrialBooks.filter((b) => b.series === 'Mistborn — Era Dois');
+const eraTwoBooks = scadrialBooks.filter((b) => b.series === 'Mistborn: Era Dois');
 const secretHistory = scadrialBooks.find((b) => b.series === 'Mistborn — História Secreta');
 
 const magicSystems = [
@@ -97,15 +97,25 @@ export default function ScadrialSection() {
         </p>
 
         <div className="world-transition-caption" aria-hidden="true">
-          Trezentos anos depois...
+          Trezentos anos depois, o mundo mudou. Os metais ainda guardam poder.
         </div>
 
-        <h3 className="world-section__subheading">Mistborn — Era Dois</h3>
-        <p className="world-section__note">
-          Uma nova geração enfrenta um mundo em transformação. Recomendamos começar pela Trilogia Original antes
-          de seguir para estes livros. Hoje a Trama publica a Era Dois em um box com os quatro romances — as
-          edições avulsas abaixo estão previstas para breve.
-        </p>
+        <h3 className="world-section__subheading">Mistborn: Era Dois</h3>
+        <div className="world-section__note world-section__note--expanded">
+          <p>
+            Scadrial sobreviveu ao fim do mundo e entrou em uma nova era. Trezentos anos depois da Trilogia
+            Original, ferrovias atravessam o continente, armas substituem espadas e os primeiros arranha-céus
+            transformam as cidades. A Alomancia e a Feruquimia continuam presentes, agora combinadas às invenções
+            de uma sociedade em plena modernização.
+          </p>
+          <p>
+            É nesse mundo que surgem Wax e Wayne, dois homens da lei com poderes, métodos e temperamentos muito
+            diferentes. Misturando fantasia, investigação, aventura de fronteira e romance policial, os quatro
+            livros revelam como as decisões da primeira era continuam moldando Scadrial e aproximam Mistborn das
+            grandes conexões do Cosmere.
+          </p>
+          <p>Recomendamos a leitura depois da Trilogia Original.</p>
+        </div>
         <div className="book-timeline">
           {eraTwoBooks.map((book) => (
             <BookCard key={book.id} book={book} />
