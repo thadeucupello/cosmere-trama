@@ -81,11 +81,10 @@ body {
   overflow-x: hidden;
 }
 
-/* A composição editorial foi desenhada para respirar como no zoom de 80%.
-   Aplicamos essa escala apenas no desktop e preservamos o mobile nativo. */
+/* Mantém a composição editorial compacta, mas recupera legibilidade no desktop. */
 @media (min-width: 901px) {
   body {
-    zoom: 0.8;
+    zoom: 0.9;
   }
 }
 
