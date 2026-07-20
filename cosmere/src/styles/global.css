@@ -81,10 +81,23 @@ body {
   overflow-x: hidden;
 }
 
-/* Mantém a composição editorial compacta, mas recupera legibilidade no desktop. */
+/* Usa a escala nativa no desktop para recuperar a legibilidade completa. */
 @media (min-width: 901px) {
   body {
-    zoom: 0.9;
+    zoom: 1;
+  }
+}
+
+/* Reforça a leitura no celular sem alterar a estrutura das seções. */
+@media (max-width: 560px) {
+  :root {
+    --step-xs: 0.8rem;
+    --step-sm: 0.92rem;
+    --step-base: 1.02rem;
+    --step-lg: 1.2rem;
+    --step-xl: 1.72rem;
+    --step-2xl: 2.28rem;
+    --step-3xl: 2.82rem;
   }
 }
 
