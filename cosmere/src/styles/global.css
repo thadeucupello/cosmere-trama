@@ -81,23 +81,26 @@ body {
   overflow-x: hidden;
 }
 
-/* Usa a escala nativa no desktop para recuperar a legibilidade completa. */
 @media (min-width: 901px) {
   body {
     zoom: 1;
   }
 }
 
-/* Reforça a leitura no celular sem alterar a estrutura das seções. */
-@media (max-width: 560px) {
+@media (max-width: 700px) {
+  html {
+    font-size: 112.5%;
+  }
+
   :root {
-    --step-xs: 0.8rem;
-    --step-sm: 0.92rem;
-    --step-base: 1.02rem;
-    --step-lg: 1.2rem;
-    --step-xl: 1.72rem;
-    --step-2xl: 2.28rem;
-    --step-3xl: 2.82rem;
+    --step-xs: 0.82rem;
+    --step-sm: 0.94rem;
+    --step-base: 1.04rem;
+    --step-lg: 1.22rem;
+    --step-xl: 1.76rem;
+    --step-2xl: 2.32rem;
+    --step-3xl: 2.88rem;
+    --content-padding: 1.1rem;
   }
 }
 
