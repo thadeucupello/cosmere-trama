@@ -4,16 +4,16 @@ import brandonPortrait from '../assets/brandon/portrait.webp';
 
 const facts = [
   'Best-seller internacional',
+  'Um dos autores de fantasia mais vendidos do século XXI',
+  'Vencedor dos maiores prêmios do gênero',
   'Milhões de livros vendidos em todo o mundo',
-  'Criador da Cosmere',
-  'Autor de Mistborn e Relatos da Guerra das Tempestades',
 ];
 
 const timeline = [
-  { year: '2005', label: 'Elantris apresenta o primeiro mundo da Cosmere' },
-  { year: '2006', label: 'Mistborn abre as portas de Scadrial' },
-  { year: '2010', label: 'Começa a jornada pelos Relatos da Guerra das Tempestades' },
-  { year: 'Hoje', label: 'Mundos, histórias e personagens continuam expandindo a Cosmere' },
+  { year: '2005', label: 'Elantris, sua primeira obra publicada, abre as portas da Cosmere.' },
+  { year: '2006', label: 'Mistborn, uma de suas sagas mais queridas pelo público, apresenta o mundo de Scadrial e um sistema de magia inovador.' },
+  { year: '2010', label: 'O Caminho dos Reis dá início a Relatos da Guerra das Tempestades, sua saga mais complexa e extensa.' },
+  { year: 'Hoje', label: 'Mundos, histórias e personagens continuam expandindo a Cosmere a cada nova publicação.' },
 ];
 
 export default function AboutAuthor() {
