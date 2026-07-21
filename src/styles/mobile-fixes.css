@@ -62,15 +62,26 @@
 
   /* Os livros relacionados usam um cartão horizontal compacto. As regras
      gerais acima, pensadas para a biblioteca, não podem definir sua altura. */
+  .article-books .book-grid {
+    grid-auto-rows: max-content;
+    align-items: start;
+  }
+
   .article-books .book-card {
-    min-height: 0;
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start;
+    grid-template-columns: 92px minmax(0, 1fr);
+    grid-template-rows: max-content;
   }
 
   .article-books .book-card__cover {
     width: 92px;
-    height: 138px;
-    min-height: 0;
+    height: 138px !important;
+    min-height: 0 !important;
     aspect-ratio: auto;
+    align-self: start;
   }
 
   .article-books .book-card__cover img {
@@ -79,6 +90,13 @@
     max-height: none;
     object-fit: contain;
     padding: 0.45rem;
+  }
+
+  .article-books .book-card__body {
+    height: auto;
+    min-height: 0;
+    align-self: start;
+    flex: none;
   }
 
   .article-books .book-card__title {
