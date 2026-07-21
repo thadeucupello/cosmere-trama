@@ -1381,8 +1381,8 @@
 .book-card__journey-badge {
   position: absolute;
   z-index: 3;
-  top: -11px;
-  right: 12px;
+  top: 0.6rem;
+  right: 0.6rem;
   padding: 0.35rem 0.65rem;
   border-radius: 999px;
   background: var(--color-gold);
