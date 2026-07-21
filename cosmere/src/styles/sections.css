@@ -1008,6 +1008,15 @@
   font-size: var(--step-xs);
 }
 
+.campaign-highlight__pending {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: var(--step-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* ── Newsletter ───────────────────────────────────────────────────── */
 .newsletter__inner {
   display: flex;

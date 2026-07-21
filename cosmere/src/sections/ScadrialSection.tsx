@@ -50,6 +50,7 @@ export default function ScadrialSection() {
       <div className="container">
         <BackToMapLink />
         <SectionHeading
+          level={1}
           eyebrow="O mundo de Mistborn"
           title={world.name}
           subtitle="Um mundo forjado entre cinzas e névoas, onde o poder dos metais pode mudar o destino de impérios."

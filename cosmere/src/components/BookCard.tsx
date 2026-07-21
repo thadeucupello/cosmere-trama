@@ -34,7 +34,7 @@ export default function BookCard({ book, highlighted = false }: Props) {
         )}
         <span className={`book-card__status book-card__status--${book.status}`}>{statusLabel[book.status]}</span>
         {book.isPartOfCosmere === false && (
-          <span className="book-card__universe-badge">Fora do Cosmere</span>
+          <span className="book-card__universe-badge">Fora da Cosmere</span>
         )}
         {book.coverIsProvisional && (
           <span className="book-card__provisional">Capa provisória (edição internacional)</span>

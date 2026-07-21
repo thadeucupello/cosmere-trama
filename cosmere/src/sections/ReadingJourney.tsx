@@ -29,6 +29,7 @@ export default function ReadingJourney() {
       <div className="container">
         <BackToMapLink to="/" label="Voltar para o início" />
         <SectionHeading
+          level={1}
           align="center"
           title="Toda jornada começa com uma escolha."
           subtitle="Não existe uma ordem obrigatória para descobrir a Cosmere. Escolha a rota que combina com o tipo de história que você quer viver agora."

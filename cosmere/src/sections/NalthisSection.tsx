@@ -30,6 +30,7 @@ export default function NalthisSection() {
       <div className="container">
         <BackToMapLink />
         <SectionHeading
+          level={1}
           eyebrow="O mundo de Warbreaker"
           title={world.name}
           subtitle="Um mundo onde a vida possui cor, o poder pode ser entregue e até os deuses precisam respirar."
@@ -48,7 +49,7 @@ export default function NalthisSection() {
             particular movem seus próprios planos.
           </p>
           <p>
-            <em>Warbreaker: o sopro dos Deuses</em> combina intriga política, humor, romance, religião e uma das
+            <em>Warbreaker: O Sopro dos Deuses</em> combina intriga política, humor, romance, religião e uma das
             magias mais visuais criadas por Brandon Sanderson.
           </p>
         </div>
@@ -72,7 +73,7 @@ export default function NalthisSection() {
           />
         </div>
 
-        <h3 className="world-section__subheading">Warbreaker: o sopro dos Deuses</h3>
+        <h3 className="world-section__subheading">Warbreaker: O Sopro dos Deuses</h3>
         <div className="world-section__note world-section__note--expanded">
           <p>
             Duas irmãs separadas por um tratado. Um Rei-Deus envolto em silêncio. Uma corte de divindades que não

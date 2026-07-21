@@ -58,6 +58,7 @@ export default function RosharSection() {
       <div className="container">
         <BackToMapLink />
         <SectionHeading
+          level={1}
           eyebrow="O mundo de Relatos da Guerra das Tempestades"
           title={world.name}
           subtitle="Um mundo de pedra e tempestades, onde juramentos despertam poderes e antigas lendas começam a retornar."

@@ -9,6 +9,7 @@ import ReadingJourney from './sections/ReadingJourney';
 import TramaLibrary from './sections/TramaLibrary';
 import ContentHub from './sections/ContentHub';
 import ArticlePage from './sections/ArticlePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
   return <Routes><Route element={<RootLayout />}>
@@ -21,5 +22,6 @@ export default function App() {
     <Route path="/biblioteca" element={<TramaLibrary />} />
     <Route path="/arquivos" element={<ContentHub />} />
     <Route path="/arquivos/:slug" element={<ArticlePage />} />
+    <Route path="*" element={<NotFoundPage />} />
   </Route></Routes>;
 }

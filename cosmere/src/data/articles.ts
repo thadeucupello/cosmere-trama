@@ -32,7 +32,7 @@ export const articles: Article[] = [
       { type: 'heading', text: 'Se você quer uma aventura completa' },
       { type: 'paragraph', text: 'O Império Final é uma excelente porta de entrada. O primeiro Mistborn mistura fantasia, golpe e rebelião em uma história com objetivo claro, enquanto apresenta a Alomancia de maneira muito acessível. Depois dele, você pode seguir pela Trilogia Original e chegar a uma conclusão planejada desde o início.' },
       { type: 'heading', text: 'Se você prefere um único volume' },
-      { type: 'paragraph', text: 'Warbreaker: o sopro dos Deuses conta uma história completa em Nalthis, com intriga política e uma magia construída a partir de cores e BioCroma. Tress, a garota do Mar Esmeralda e Yumi e o Pintor de Pesadelos também funcionam como aventuras independentes, embora pequenos detalhes ganhem outra dimensão para quem já viajou por mais mundos.' },
+      { type: 'paragraph', text: 'Warbreaker: O Sopro dos Deuses conta uma história completa em Nalthis, com intriga política e uma magia construída a partir de cores e BioCroma. Tress, a garota do Mar Esmeralda e Yumi e o Pintor de Pesadelos também funcionam como aventuras independentes, embora pequenos detalhes ganhem outra dimensão para quem já viajou por mais mundos.' },
       { type: 'heading', text: 'Se você quer uma saga monumental' },
       { type: 'paragraph', text: 'O Caminho dos Reis abre Relatos da Guerra das Tempestades. É a opção para quem gosta de grandes elencos, histórias que se desenvolvem com calma e um mundo cuja natureza faz parte da narrativa. Roshar exige um pouco mais de fôlego, mas recompensa a atenção do leitor.' },
       { type: 'heading', text: 'E a ordem da Cosmere?' },

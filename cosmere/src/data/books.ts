@@ -228,7 +228,7 @@ export const books: Book[] = [
   // WARBREAKER
   {
     id: 'warbreaker',
-    title: 'Warbreaker: o sopro dos Deuses',
+    title: 'Warbreaker: O Sopro dos Deuses',
     series: 'Warbreaker',
     world: 'nalthis',
     order: 1,

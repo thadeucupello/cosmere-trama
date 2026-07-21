@@ -31,6 +31,7 @@ export default function SecretProjects() {
       <div className="container">
         <BackToMapLink />
         <SectionHeading
+          level={1}
           eyebrow="Quatro livros. Três novos cantos da Cosmere. Uma viagem para além dela."
           title={world.name}
           subtitle="Cada história abre uma nova porta."

@@ -14,9 +14,7 @@ export default function CampaignHighlight() {
           {ctaLabel}
         </a>
       ) : (
-        <button type="button" className="btn btn-ghost" disabled title="Link de campanha ainda não configurado">
-          {ctaLabel}
-        </button>
+        <p className="campaign-highlight__pending">Mais informações em breve</p>
       )}
     </aside>
   );

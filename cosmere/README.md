@@ -1,18 +1,18 @@
-# Descubra o Cosmere — Editora Trama
+# Descubra a Cosmere — Editora Trama
 
-Site oficial da Editora Trama para apresentar Brandon Sanderson e o Cosmere a
+Site oficial da Editora Trama para apresentar Brandon Sanderson e a Cosmere a
 novos leitores brasileiros. Construído com React, TypeScript, Vite e React
 Router, em um modelo **híbrido de navegação**:
 
 - A **página inicial** (`/`) continua sendo uma experiência imersiva de
-  rolagem única — Herói → Autor → O que é o Cosmere → Escolha seu caminho →
+  rolagem única — Herói → Autor → O que é a Cosmere → Escolha seu caminho →
   grade de mundos.
 - **Scadrial, Roshar, Nalthis, Projetos Secretos, Sua Jornada e a Biblioteca
   Trama** são páginas próprias, com URL real (`/scadrial`, `/biblioteca`
   etc.), o que permite compartilhar links diretos (ex.: em QR Codes ou
   posts) e melhora a indexação de cada mundo/catálogo separadamente.
 - A Bússola de navegação e o rodapé funcionam em todas as páginas: itens que
-  apontam para a Home (Autor, O que é o Cosmere, Por onde começar) rolam até
+  apontam para a Home (Autor, O que é a Cosmere, Por onde começar) rolam até
   a seção correspondente; itens de mundos e catálogo navegam para a página
   dedicada.
 - A newsletter e o rodapé são compartilhados por todas as páginas (definidos
@@ -27,7 +27,7 @@ necessário ser desenvolvedor para atualizar catálogo, imagens e links.
 
 Esta rodada corrigiu:
 
-- **Símbolo do Cosmere**: adicionado como marca d'água sutil e giratória no
+- **Símbolo da Cosmere**: adicionado como marca d'água sutil e giratória no
   Herói da página inicial (`src/sections/Hero.tsx`), usando o arquivo
   oficial fornecido. Respeitando `prefers-reduced-motion`, a rotação para
   quando o usuário prefere menos movimento.
@@ -46,12 +46,12 @@ Esta rodada corrigiu:
   URLs confirmadas (Instagram, X, Facebook). TikTok fica de fora até termos
   um link oficial.
 - **O Manual do Mago Frugal**: agora aparece separado, em "Uma aventura fora
-  do Cosmere", com aviso explicativo, dentro da página de Projetos Secretos.
-- **Mapa do Cosmere**: Lumar, Komashi e Canticle agora são clicáveis e
+  da Cosmere", com aviso explicativo, dentro da página de Projetos Secretos.
+- **Mapa da Cosmere**: Lumar, Komashi e Cântico agora são clicáveis e
   mostram nome, descrição, capa do livro relacionado e botão para conhecê-lo
   — com visual diferenciado (anel tracejado) por não terem página própria
   dedicada, diferente de Scadrial/Roshar/Nalthis.
-- **Descrições de Lumar, Komashi e Canticle**: reescritas para bater com o
+- **Descrições de Lumar, Komashi e Cântico**: reescritas para bater com o
   conteúdo real dos livros, sem spoilers.
 - **Imagem de compartilhamento (Open Graph)**: gerada e configurada em
   `public/og-cosmere.jpg`, usando a logo oficial — antes apontava para um
@@ -66,9 +66,8 @@ Esta rodada corrigiu:
   `TODO(Trama)`).
 - **TikTok**: adicione a URL em `src/data/social.ts` quando tiver uma
   confirmada.
-- **Capas dos dois boxes** (Wax & Wayne e Trilogia Original): vieram em
-  resolução mais baixa que as demais — se tiver os arquivos originais em
-  maior resolução, vale substituir.
+- **Capas dos dois boxes** (Wax & Wayne e Trilogia Original): atualizadas e
+  padronizadas no mesmo formato das demais capas do catálogo.
 
 ---
 
@@ -125,7 +124,7 @@ npx vercel
 
 | Rota | Conteúdo |
 |---|---|
-| `/` | Home imersiva: Herói, Autor, O que é o Cosmere, Escolha seu caminho, grade de mundos |
+| `/` | Home imersiva: Herói, Autor, O que é a Cosmere, Escolha seu caminho, grade de mundos |
 | `/scadrial` | Mundo de Mistborn |
 | `/roshar` | Mundo de Relatos da Guerra das Tempestades |
 | `/nalthis` | Mundo de Warbreaker |

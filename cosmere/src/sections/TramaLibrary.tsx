@@ -73,7 +73,7 @@ const journeySpotlights: Record<PathId, { route: string; destination: string; bo
     route: 'Uma história completa',
     destination: 'Nalthis',
     bookId: 'warbreaker',
-    bookTitle: 'Warbreaker: o sopro dos Deuses',
+    bookTitle: 'Warbreaker: O Sopro dos Deuses',
   },
   completo: {
     route: 'O mapa inteiro',
@@ -126,6 +126,7 @@ export default function TramaLibrary() {
       <div className="container">
         <BackToMapLink to="/" label="Voltar para o início" />
         <SectionHeading
+          level={1}
           title="Uma biblioteca de mundos."
           subtitle="Reúna suas próximas jornadas pela Cosmere. Explore as séries publicadas pela Trama, descubra por onde começar e acompanhe os próximos lançamentos."
         />
