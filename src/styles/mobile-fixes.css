@@ -1,0 +1,93 @@
+/* Ajustes de legibilidade e enquadramento adicionados após revisão em dispositivos reais. */
+
+.book-card__cover img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  body,
+  button,
+  input,
+  textarea,
+  select {
+    font-size: 1rem;
+  }
+
+  .hero__subtitle,
+  .section-sub,
+  .about-author__intro,
+  .book-card__description,
+  .trama-library__group-heading p,
+  .campaign-highlight__description,
+  .world-card__teaser,
+  .explore-worlds__card p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .book-card__series,
+  .book-card__action,
+  .filter-chip,
+  .eyebrow,
+  .back-to-map,
+  .book-card__pending-note {
+    font-size: 0.88rem;
+  }
+
+  .book-card__title {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  .book-card__cover {
+    aspect-ratio: auto;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-card__cover img {
+    width: 100%;
+    height: auto;
+    max-height: 430px;
+    object-fit: contain;
+    padding: 0.8rem;
+  }
+
+  /* Os livros relacionados usam um cartão horizontal compacto. As regras
+     gerais acima, pensadas para a biblioteca, não podem definir sua altura. */
+  .article-books .book-card {
+    min-height: 0;
+  }
+
+  .article-books .book-card__cover {
+    width: 92px;
+    height: 138px;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+
+  .article-books .book-card__cover img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    padding: 0.45rem;
+  }
+
+  .article-books .book-card__title {
+    font-size: var(--step-sm);
+  }
+
+  .article-books .book-card__action {
+    min-height: 36px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.72rem;
+  }
+}
