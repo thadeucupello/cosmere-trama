@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
-import BookCard from '../components/BookCard';
 import ArticleShare from '../components/ArticleShare';
+import RelatedBookCard from '../components/RelatedBookCard';
 import { articles, getArticle } from '../data/articles';
 import { books } from '../data/books';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -52,7 +52,7 @@ export default function ArticlePage() {
         </div>
       </article>
 
-      <section className="section article-books"><div className="container"><p className="eyebrow">Continue a leitura</p><h2>Livros relacionados</h2><div className="book-grid">{relatedBooks.map((book) => <BookCard key={book.id} book={book} />)}</div></div></section>
+      <section className="section article-books"><div className="container"><p className="eyebrow">Continue a leitura</p><h2>Livros relacionados</h2><div className="related-books-grid">{relatedBooks.map((book) => <RelatedBookCard key={book.id} book={book} />)}</div></div></section>
       <section className="section article-related"><div className="container"><p className="eyebrow">Outros arquivos</p><h2>Há mais mundos no mapa</h2><div className="archive-grid">{relatedArticles.map((item) => <ArticleCard key={item.slug} article={item} />)}</div></div></section>
     </div>
   );

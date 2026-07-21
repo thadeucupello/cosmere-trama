@@ -59,4 +59,53 @@
     object-fit: contain;
     padding: 0.8rem;
   }
+
+  /* Os livros relacionados usam um cartão horizontal compacto. As regras
+     gerais acima, pensadas para a biblioteca, não podem definir sua altura. */
+  .article-books .book-grid {
+    grid-auto-rows: max-content;
+    align-items: start;
+  }
+
+  .article-books .book-card {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start;
+    grid-template-columns: 92px minmax(0, 1fr);
+    grid-template-rows: max-content;
+  }
+
+  .article-books .book-card__cover {
+    width: 92px;
+    height: 138px !important;
+    min-height: 0 !important;
+    aspect-ratio: auto;
+    align-self: start;
+  }
+
+  .article-books .book-card__cover img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    padding: 0.45rem;
+  }
+
+  .article-books .book-card__body {
+    height: auto;
+    min-height: 0;
+    align-self: start;
+    flex: none;
+  }
+
+  .article-books .book-card__title {
+    font-size: var(--step-sm);
+  }
+
+  .article-books .book-card__action {
+    min-height: 36px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.72rem;
+  }
 }
