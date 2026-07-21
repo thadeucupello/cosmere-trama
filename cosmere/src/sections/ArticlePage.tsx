@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import ArticleCard from '../components/ArticleCard';
 import BookCard from '../components/BookCard';
+import ArticleShare from '../components/ArticleShare';
 import { articles, getArticle } from '../data/articles';
 import { books } from '../data/books';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -40,12 +41,15 @@ export default function ArticlePage() {
 
       <article className="article-body container">
         <div className="article-body__rail" aria-hidden="true"><span>{article.symbol}</span></div>
-        <div className="article-body__content">{article.blocks.map((block, index) => {
-          if (block.type === 'heading') return <h2 key={index}>{block.text}</h2>;
-          if (block.type === 'callout') return <aside key={index} className="article-callout"><span>✦</span><div><h3>{block.title}</h3><p>{block.text}</p></div></aside>;
-          if (block.type === 'spoiler') return <details key={index} className="article-spoiler"><summary><span>Conteúdo com orientação de spoiler</span><strong>{block.title}</strong></summary><p>{block.text}</p></details>;
-          return <p key={index}>{block.text}</p>;
-        })}</div>
+        <div className="article-body__content">
+          {article.blocks.map((block, index) => {
+            if (block.type === 'heading') return <h2 key={index}>{block.text}</h2>;
+            if (block.type === 'callout') return <aside key={index} className="article-callout"><span>✦</span><div><h3>{block.title}</h3><p>{block.text}</p></div></aside>;
+            if (block.type === 'spoiler') return <details key={index} className="article-spoiler"><summary><span>Conteúdo com orientação de spoiler</span><strong>{block.title}</strong></summary><p>{block.text}</p></details>;
+            return <p key={index}>{block.text}</p>;
+          })}
+          <ArticleShare title={article.title} />
+        </div>
       </article>
 
       <section className="section article-books"><div className="container"><p className="eyebrow">Continue a leitura</p><h2>Livros relacionados</h2><div className="book-grid">{relatedBooks.map((book) => <BookCard key={book.id} book={book} />)}</div></div></section>

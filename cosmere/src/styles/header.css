@@ -345,6 +345,35 @@
   color: var(--color-gold);
 }
 
+.compass-panel__journey {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: clamp(2rem, 5vh, 3.5rem);
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(201, 164, 98, 0.52);
+  border-radius: var(--radius-md);
+  background: linear-gradient(120deg, rgba(201, 164, 98, 0.16), rgba(201, 164, 98, 0.04));
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: border-color var(--dur-fast), background var(--dur-fast), transform var(--dur-fast);
+}
+
+.compass-panel__journey:hover {
+  border-color: var(--color-gold);
+  background: rgba(201, 164, 98, 0.2);
+  transform: translateY(-2px);
+}
+
+.compass-panel__journey > span:first-child,
+.compass-panel__journey > span:last-child { color: var(--color-gold); }
+.compass-panel__journey > span:nth-child(2) { display: grid; min-width: 0; }
+.compass-panel__journey small { color: var(--color-gold); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.compass-panel__journey strong { margin-top: 0.12rem; font-family: var(--font-display); font-size: var(--step-base); }
+.compass-panel__journey em { margin-top: 0.12rem; overflow: hidden; color: var(--color-text-secondary); font-size: var(--step-xs); font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
+.compass-panel__journey + .compass-panel__newsletter { margin-top: 0.8rem; }
+
 @media (max-width: 680px) {
   .compass-panel--editorial {
     width: 100%;
@@ -398,6 +427,8 @@
     margin-top: 1.5rem;
     padding: 0.8rem 1rem;
   }
+
+  .compass-panel__journey { margin-top: 1.5rem; padding: 0.8rem 1rem; }
 }
 
 @media (max-width: 390px) {

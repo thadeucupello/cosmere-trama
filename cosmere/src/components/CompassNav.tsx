@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { navItems } from '../data/content';
+import { readingPaths } from '../data/content';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import type { PathId } from '../types';
 import { navItemTo } from '../utils/navItemTo';
 
 interface Props { open: boolean; onClose: () => void; activeId: string; }
@@ -17,6 +20,8 @@ export default function CompassNav({ open, onClose, activeId }: Props) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
   const newsletter = navItems.find((item) => item.id === 'newsletter');
+  const [selectedPath] = useLocalStorage<PathId | null>('cosmere:selected-path', null);
+  const selectedRoute = readingPaths.find((path) => path.id === selectedPath);
 
   useEffect(() => {
     if (!open) return;
@@ -69,6 +74,18 @@ export default function CompassNav({ open, onClose, activeId }: Props) {
                 </nav>
               ))}
             </div>
+
+            {selectedRoute && (
+              <Link className="compass-panel__journey" to="/jornada" onClick={onClose}>
+                <span aria-hidden="true">{selectedRoute.symbol}</span>
+                <span>
+                  <small>Continuar sua jornada</small>
+                  <strong>{selectedRoute.title}</strong>
+                  <em>Próximo destino: {selectedRoute.firstBook}</em>
+                </span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            )}
 
             {newsletter && <Link className="compass-panel__newsletter" to={navItemTo(newsletter, location.pathname)} onClick={onClose}>
               <span><small>Novidades da Trama</small><strong>Receba notícias de novos mundos</strong></span>

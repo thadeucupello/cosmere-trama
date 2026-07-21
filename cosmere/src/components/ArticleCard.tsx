@@ -4,6 +4,16 @@ import type { Article } from '../types';
 export default function ArticleCard({ article, featured = false }: { article: Article; featured?: boolean }) {
   return (
     <article className={`archive-card ${featured ? 'archive-card--featured' : ''}`}>
+      {article.heroImage && (
+        <Link className="archive-card__visual" to={`/arquivos/${article.slug}`} aria-label={`Abrir ${article.title}`}>
+          <img
+            src={article.heroImage}
+            alt={article.heroAlt ?? ''}
+            loading="lazy"
+            style={{ objectPosition: article.heroPosition }}
+          />
+        </Link>
+      )}
       <div className="archive-card__symbol" aria-hidden="true">{article.symbol}</div>
       <div className="archive-card__content">
         <p className="archive-card__eyebrow">{article.eyebrow}</p>
