@@ -6,23 +6,32 @@
 
 .cosmere-map--refined .cosmere-map__intro {
   width: 100%;
-  max-width: 820px;
+  max-width: 760px;
   margin-inline: auto;
 }
 
+/* O CSS-base força os headings da Cosmere para a esquerda no desktop.
+   Neste preview, a abertura funciona como um bloco editorial centralizado. */
+.cosmere-map--refined .cosmere-map__intro .section-heading-block {
+  width: 100%;
+  text-align: center !important;
+}
+
 .cosmere-map--refined .cosmere-map__intro .section-sub {
-  max-width: 68ch;
+  max-width: 62ch;
+  margin-inline: auto !important;
   font-size: var(--step-base);
   line-height: 1.72;
+  text-align: center;
 }
 
 .cosmere-map--refined .cosmere-map__experience {
   width: 100%;
-  max-width: 1040px;
+  max-width: 980px;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
   align-items: center;
 }
 
@@ -33,7 +42,7 @@
 }
 
 .cosmere-map--refined .cosmere-orbit {
-  width: min(520px, 100%);
+  width: min(500px, 100%);
 }
 
 .cosmere-map--refined .cosmere-map__panel {
