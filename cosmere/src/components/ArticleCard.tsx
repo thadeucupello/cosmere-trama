@@ -10,6 +10,7 @@ export default function ArticleCard({ article, featured = false }: { article: Ar
             src={article.heroImage}
             alt={article.heroAlt ?? ''}
             loading="lazy"
+            decoding="async"
             style={{ objectPosition: article.heroPosition }}
           />
         </Link>
