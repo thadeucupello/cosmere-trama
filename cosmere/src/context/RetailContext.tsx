@@ -1,8 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const STORAGE_KEY = 'cosmere:retail-context';
-
 interface RetailContextValue {
   isRetailMode: boolean;
   storeSlug?: string;
@@ -11,7 +9,7 @@ interface RetailContextValue {
   unitName?: string;
 }
 
-const RetailContext = createContext<RetailContextValue>({ isRetailMode: false });
+const RetailContext = createContext<RetailContextValue>({ isRetailMode: true });
 
 const knownStores: Record<string, string> = {
   leitura: 'Livraria Leitura',
@@ -29,12 +27,19 @@ function humanizeSlug(value: string) {
 
 function fromSearch(search: string): RetailContextValue | null {
   const params = new URLSearchParams(search);
+  const channel = params.get('canal')?.trim().toLowerCase();
+
+  // Online purchase is opt-in. The plain site stays safe for physical bookstores.
+  if (channel === 'online') {
+    return { isRetailMode: false };
+  }
+
   const storeSlug = params.get('loja')?.trim().toLowerCase();
-
-  if (!storeSlug) return null;
-
   const unitSlug = params.get('unidade')?.trim().toLowerCase() || undefined;
-  const storeName = knownStores[storeSlug] ?? humanizeSlug(storeSlug);
+
+  if (!storeSlug && channel !== 'livraria') return null;
+
+  const storeName = storeSlug ? knownStores[storeSlug] ?? humanizeSlug(storeSlug) : undefined;
   const unitName = unitSlug ? humanizeSlug(unitSlug) : undefined;
 
   return {
@@ -46,35 +51,15 @@ function fromSearch(search: string): RetailContextValue | null {
   };
 }
 
-function fromSession(): RetailContextValue | null {
-  if (typeof window === 'undefined') return null;
-
-  try {
-    const raw = window.sessionStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as RetailContextValue;
-    return parsed.isRetailMode ? parsed : null;
-  } catch {
-    return null;
-  }
-}
-
 export function RetailContextProvider({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const [retail, setRetail] = useState<RetailContextValue>(() =>
-    fromSearch(window.location.search) ?? fromSession() ?? { isRetailMode: false }
+    fromSearch(window.location.search) ?? { isRetailMode: true }
   );
 
   useEffect(() => {
     const incoming = fromSearch(location.search);
-    if (!incoming) return;
-
-    setRetail(incoming);
-    try {
-      window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(incoming));
-    } catch {
-      // The experience still works on the current page when storage is unavailable.
-    }
+    if (incoming) setRetail(incoming);
   }, [location.search]);
 
   const value = useMemo(() => retail, [retail]);
