@@ -36,7 +36,7 @@ export default function ScadrialSection() {
   const navigate = useNavigate();
   usePageMeta(
     'Scadrial | Descubra a Cosmere — Editora Trama',
-    'Conheça Scadrial, o mundo de Mistborn: Allomancia, Feruquimia, Hemalurgia e os livros publicados pela Trama.'
+    'Conheça Scadrial, o mundo de Mistborn: Alomancia, Feruquimia, Hemalurgia e os livros publicados pela Trama.'
   );
 
   return (
@@ -58,106 +58,64 @@ export default function ScadrialSection() {
 
         <div className="world-section__intro">
           <p>
-            Scadrial é o palco de uma saga construída para atravessar eras. Na Trilogia Original, você encontrará
-            um império coberto por cinzas, uma sociedade dividida pela opressão e um grupo de ladrões disposto a
-            realizar o golpe impossível: derrubar um governante imortal. É uma história de revolução, poder e
-            sobrevivência, conduzida por uma jovem que ainda está descobrindo do que é capaz.
+            Scadrial é um mundo marcado pelo poder dos metais. Na Era Um, cinzas caem do céu, o sol é vermelho e o
+            Senhor Soberano governa há mil anos. Séculos depois, o mesmo planeta entra em uma nova era de ferrovias,
+            armas de fogo e cidades em expansão.
           </p>
           <p>
-            Trezentos anos depois, a Era Dois acompanha uma Scadrial em plena transformação. Ferrovias, armas,
-            grandes cidades e novas tecnologias dividem espaço com a Alomancia e a Feruquimia. A fantasia épica
-            ganha elementos de investigação, aventura de fronteira e romance policial, enquanto as consequências
-            da primeira trilogia continuam moldando o mundo.
-          </p>
-          <p>
-            E a história ainda não terminou. Brandon Sanderson já trabalha em <em>Ghostbloods</em>, a terceira era
-            de Mistborn, ambientada aproximadamente cinquenta anos depois e inspirada nos anos 1980 e no início da
-            era da computação. Mais adiante, o planejamento do autor levará Scadrial até a era espacial. Assim,
-            Mistborn acompanhará um mesmo mundo desde um império de cinzas até um futuro de ficção científica.
+            Ao longo das duas eras de Mistborn, Brandon Sanderson transforma o próprio mundo em personagem: sistemas
+            políticos mudam, religiões nascem, tecnologias avançam e os poderes conhecidos ganham novas combinações.
           </p>
         </div>
 
-        <h3 className="world-section__subheading">Sistemas de magia</h3>
-        <div className="magic-card-grid">
-          {magicSystems.map((m) => (
-            <MagicCard key={m.title} {...m} />
+        <div className="magic-grid" aria-label="Sistemas de magia de Scadrial">
+          {magicSystems.map((system) => (
+            <MagicCard key={system.title} title={system.title} description={system.description} />
           ))}
         </div>
 
-        <h3 className="world-section__subheading">Mistborn: a Trilogia Original</h3>
-        <div className="book-timeline">
-          {originalTrilogyGroup.map((book) => (
-            <BookCard key={book.id} book={book} />
-          ))}
-        </div>
-        <p className="world-section__note">
-          Uma fantasia épica com o ritmo de uma história de assalto. Tudo começa com um grupo de ladrões decidido
-          a derrubar um império governado há mil anos pelo mesmo homem. A partir daí, a trama cresce livro a livro
-          até alcançar o destino de toda Scadrial. Uma história completa em três volumes e a melhor porta de entrada
-          para a Cosmere.
-        </p>
-
-        <div className="world-transition-caption" aria-hidden="true">
-          Trezentos anos depois, o mundo mudou. Os metais ainda guardam poder.
+        <div className="world-book-group">
+          <SectionHeading
+            eyebrow="Mistborn: a Trilogia Original"
+            title="A queda de um império. O nascimento de uma lenda."
+            subtitle="Comece a sua jornada por Scadrial com a trilogia que apresentou Mistborn ao mundo."
+          />
+          <div className="book-grid">
+            {originalTrilogyGroup.map((book) => <BookCard key={book.id} book={book} />)}
+          </div>
         </div>
 
-        <h3 className="world-section__subheading">Mistborn: Era Dois</h3>
-        <div className="world-section__note world-section__note--expanded">
-          <p>
-            Scadrial sobreviveu ao fim do mundo e entrou em uma nova era. Trezentos anos depois da Trilogia
-            Original, ferrovias atravessam o continente, armas substituem espadas e os primeiros arranha-céus
-            transformam as cidades. A Alomancia e a Feruquimia continuam presentes, agora combinadas às invenções
-            de uma sociedade em plena modernização.
-          </p>
-          <p>
-            É nesse mundo que surgem Wax e Wayne, dois homens da lei com poderes, métodos e temperamentos muito
-            diferentes. Misturando fantasia, investigação, aventura de fronteira e romance policial, os quatro
-            livros revelam como as decisões da primeira era continuam moldando Scadrial e aproximam Mistborn das
-            grandes conexões da Cosmere.
-          </p>
-          <p>Recomendamos a leitura depois da Trilogia Original.</p>
-        </div>
-        <div className="book-timeline">
-          {eraTwoBooks.map((book) => (
-            <BookCard key={book.id} book={book} />
-          ))}
+        <div className="world-book-group">
+          <SectionHeading
+            eyebrow="Mistborn: Era Dois"
+            title="O mundo mudou. Os metais também."
+            subtitle="Séculos depois da Trilogia Original, Scadrial entra em uma era de ferrovias, armas de fogo e novos heróis."
+          />
+          <div className="book-grid">
+            {eraTwoBooks.map((book) => <BookCard key={book.id} book={book} />)}
+          </div>
         </div>
 
         {secretHistory && (
-          <>
-            <h3 className="world-section__subheading">Mistborn: História Secreta</h3>
-            <div className="world-section__note world-section__note--expanded">
-              <p>
-                Há outra história acontecendo por trás dos acontecimentos da Trilogia Original. <em>Mistborn:
-                História Secreta</em> revisita momentos decisivos da saga por uma perspectiva inesperada, revela
-                parte da engrenagem oculta da Cosmere e transforma a maneira como enxergamos alguns personagens e
-                acontecimentos de Scadrial.
-              </p>
-              <p>
-                É uma leitura complementar, feita para quem deseja atravessar as fronteiras da história principal
-                e começar a perceber com mais clareza as conexões entre os mundos de Brandon Sanderson.
-              </p>
-            </div>
-            <aside className="world-section__spoiler-note" aria-label="Aviso sobre a ordem de leitura">
-              <strong>Atenção: esta história contém grandes spoilers da Trilogia Original.</strong>
-              <p>
-                Leia somente depois de <em>O Herói das Eras</em>. Para preservar também as revelações da Era Dois,
-                a experiência ideal é ler depois de <em>Os Braceletes da Perdição</em>.
-              </p>
-            </aside>
-            <div className="book-timeline book-timeline--single">
+          <div className="world-book-group world-book-group--secret-history">
+            <SectionHeading
+              eyebrow="Uma história por trás da história"
+              title="Mistborn: História Secreta"
+              subtitle="Uma viagem aos bastidores da Trilogia Original — recomendada para quem já conhece os acontecimentos dos três primeiros livros."
+            />
+            <div className="book-grid book-grid--single">
               <BookCard book={secretHistory} />
             </div>
-          </>
+          </div>
         )}
 
-        <div className="world-section__actions">
-          <button type="button" className="btn btn-primary" onClick={() => navigate('/roshar')}>
-            Continuar explorando a Cosmere
-          </button>
-          <button type="button" className="btn btn-ghost" onClick={() => navigate('/biblioteca')}>
-            Conhecer os livros publicados pela Trama
-          </button>
+        <div className="world-next-step">
+          <p className="eyebrow">Continue a jornada</p>
+          <h2>Depois de Scadrial, há outros mundos esperando.</h2>
+          <div className="world-next-step__actions">
+            <button type="button" className="btn btn-primary" onClick={() => navigate('/roshar')}>Conhecer Roshar</button>
+            <button type="button" className="btn btn-secondary" onClick={() => navigate('/biblioteca')}>Ver todos os livros</button>
+          </div>
         </div>
       </div>
     </section>
