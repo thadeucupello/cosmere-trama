@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Book } from '../types';
+import BookPurchaseAction from './BookPurchaseAction';
 
 const statusLabel: Record<Book['status'], string> = {
   published: 'Publicado',
@@ -46,20 +47,9 @@ export default function BookCard({ book, highlighted = false }: Props) {
         <h3 className="book-card__title">{book.title}</h3>
         <p className="book-card__description">{book.description}</p>
 
-        {book.purchaseUrl ? (
-          <div className="book-card__actions">
-            <a
-              href={book.purchaseUrl}
-              className="btn btn-primary book-card__action"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver na loja da Trama
-            </a>
-          </div>
-        ) : (
-          <p className="book-card__pending-note">Link oficial em preparação.</p>
-        )}
+        <div className="book-card__actions">
+          <BookPurchaseAction book={book} />
+        </div>
       </div>
     </motion.article>
   );
