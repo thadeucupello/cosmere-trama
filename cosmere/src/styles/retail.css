@@ -1,0 +1,47 @@
+.retail-purchase {
+  width: 100%;
+}
+
+.retail-purchase__panel {
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--color-text-secondary);
+  font-size: var(--step-sm);
+  line-height: 1.55;
+}
+
+.retail-purchase__panel strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+
+.retail-purchase__panel p {
+  max-width: none;
+}
+
+.retail-purchase__link {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.retail-purchase__link:hover,
+.retail-purchase__link:focus-visible {
+  color: var(--accent);
+}
+
+.retail-purchase--compact .retail-purchase__panel {
+  margin-top: 0.6rem;
+  padding: 0.75rem;
+  font-size: 0.88em;
+}
