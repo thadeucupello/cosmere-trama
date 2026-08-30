@@ -8,5 +8,5 @@ import LatestArticles from '../sections/LatestArticles';
 
 export default function HomePage() {
   useEffect(() => { document.title = 'Descubra a Cosmere | Brandon Sanderson na Editora Trama'; }, []);
-  return <><Hero /><AboutAuthor /><WhatIsCosmere /><ExploreWorlds /><LatestArticles /><PathSelector /></>;
+  return <><Hero /><WhatIsCosmere /><ExploreWorlds /><LatestArticles /><PathSelector /><AboutAuthor /></>;
 }
