@@ -1,3 +1,4 @@
+// RD_STATION_API_KEY is injected by Vercel in Preview and Production.
 const RD_CONVERSION_ENDPOINT = 'https://api.rd.services/platform/conversions';
 const CONVERSION_IDENTIFIER = 'newsletter-cosmere-trama';
 const CONTACT_TAGS = ['cosmere', 'newsletter', 'trama'];
