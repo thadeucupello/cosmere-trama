@@ -1,11 +1,10 @@
 # Modo livraria
 
-Comportamento aprovado em 30/08/2026.
+O site principal é seguro para uso em expositores físicos por padrão.
 
-- O endereço principal do site é neutro e seguro para uso em expositores de livrarias.
-- Nos livros, o CTA padrão é `Quero este livro`.
-- A orientação exibida é: `Procure este título nesta livraria ou mostre esta tela a um atendente.`
-- O acesso padrão não exibe saída para a Loja Trama.
-- Links digitais próprios da Trama podem liberar os links de compra usando `?canal=online`.
+- Acesso normal: exibe `Quero este livro` para todos os títulos que já podem ser procurados na livraria, mesmo quando ainda não existe um link de compra online na Loja Trama.
+- Exceção atual: `Vento e Verdade` permanece como `Em breve` até estar disponível.
+- O CTA orienta o visitante a procurar o título na própria livraria ou mostrar a tela a um atendente.
+- Acesso com `?canal=online`: exibe `Ver na loja da Trama` somente quando o livro tem `purchaseUrl` cadastrado.
 
-Essa regra existe para que o mesmo endereço impresso no QR Code possa ser usado em diferentes redes de livrarias sem criar conflito comercial com o ponto de venda físico.
+Isso permite usar o mesmo site no varejo físico sem desviar a compra para o e-commerce da editora, preservando os links online nos canais digitais da Trama.
