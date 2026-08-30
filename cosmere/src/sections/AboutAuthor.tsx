@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
 import brandonPortrait from '../assets/brandon/portrait.webp';
 
+const highlights = [
+  { label: 'Hugo Award', detail: 'The Emperor’s Soul · 2013' },
+  { label: 'David Gemmell Legend Award', detail: 'The Way of Kings · 2011' },
+  { label: 'Best-seller internacional', detail: 'Um dos grandes nomes da fantasia contemporânea' },
+  { label: '35 idiomas', detail: 'Obras publicadas ao redor do mundo' },
+];
+
 export default function AboutAuthor() {
   return (
     <section id="autor" className="section about-author about-author--compact" aria-label="Quem é Brandon Sanderson">
@@ -16,7 +23,7 @@ export default function AboutAuthor() {
           <img
             src={brandonPortrait}
             alt="Retrato de Brandon Sanderson"
-            className="about-author__portrait-image"
+            className="about-author__compact-image"
             width={800}
             height={1000}
             loading="lazy"
@@ -29,6 +36,15 @@ export default function AboutAuthor() {
           <p className="about-author__compact-intro">
             Brandon Sanderson é o autor por trás de Mistborn, Relatos da Guerra das Tempestades e dos mundos que formam a Cosmere. Suas histórias combinam sistemas de magia engenhosos, personagens marcantes e conexões que crescem livro a livro.
           </p>
+
+          <ul className="about-author__compact-facts" aria-label="Destaques da carreira de Brandon Sanderson">
+            {highlights.map((item) => (
+              <li key={item.label}>
+                <strong>{item.label}</strong>
+                <span>{item.detail}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
