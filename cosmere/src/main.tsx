@@ -6,6 +6,7 @@ import './styles/global.css';
 import './styles/header.css';
 import './styles/sections.css';
 import './styles/mobile-fixes.css';
+import './styles/retail.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
