@@ -1,25 +1,28 @@
 // ─────────────────────────────────────────────────────────────────────────
 // NEWSLETTER INTEGRATION
 //
-// This is the single place to wire up the real RD Station (or other ESP)
-// form. Until `ENDPOINT` is set to a real URL, the site is honest with
-// visitors instead of faking a successful subscription — see
-// `subscribeToNewsletter` below and `Newsletter.tsx`'s "unavailable" state.
-//
-// To go live:
-// 1. Set ENDPOINT to your RD Station public form endpoint (or a serverless
-//    function you control that forwards to RD Station). Never put a
-//    private API key directly in this front-end file.
-// 2. Adjust the request body/headers below to match what that endpoint
-//    expects.
+// The browser talks only to our own Vercel Function. The RD Station API key
+// lives server-side in the `RD_STATION_API_KEY` environment variable and is
+// never exposed in this bundle.
 // ─────────────────────────────────────────────────────────────────────────
 
-export const NEWSLETTER_ENDPOINT = ''; // e.g. 'https://www.editoratrama.com.br/api/rd-station-subscribe'
+export const NEWSLETTER_ENDPOINT = '/api/newsletter';
 
 export type NewsletterResult =
   | { status: 'ok' }
   | { status: 'not-configured' }
   | { status: 'error'; message: string };
+
+function getAttribution() {
+  if (typeof window === 'undefined') return {};
+
+  const params = new URLSearchParams(window.location.search);
+  return {
+    source: params.get('utm_source') ?? '',
+    medium: params.get('utm_medium') ?? '',
+    campaign: params.get('utm_campaign') ?? '',
+  };
+}
 
 export async function subscribeToNewsletter(email: string, consent: boolean): Promise<NewsletterResult> {
   if (!consent) {
@@ -34,12 +37,18 @@ export async function subscribeToNewsletter(email: string, consent: boolean): Pr
     const response = await fetch(NEWSLETTER_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, consent }),
+      body: JSON.stringify({ email, consent, ...getAttribution() }),
     });
 
     if (!response.ok) {
+      const data = await response.json().catch(() => null) as { code?: string } | null;
+      if (data?.code === 'configuration_missing') {
+        return { status: 'not-configured' };
+      }
+
       return { status: 'error', message: 'Não foi possível confirmar sua inscrição agora. Tente novamente em instantes.' };
     }
+
     return { status: 'ok' };
   } catch {
     return { status: 'error', message: 'Não foi possível confirmar sua inscrição agora. Verifique sua conexão e tente novamente.' };
