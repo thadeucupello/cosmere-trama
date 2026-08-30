@@ -4,10 +4,11 @@ import Header from '../components/Header';
 import ScrollManager from '../components/ScrollManager';
 import Newsletter from '../sections/Newsletter';
 import Footer from '../sections/Footer';
+import { RetailContextProvider } from '../context/RetailContext';
 
 export default function RootLayout() {
   return (
-    <>
+    <RetailContextProvider>
       <a href="#main-content" className="skip-link">
         Pular para o conteúdo
       </a>
@@ -22,6 +23,6 @@ export default function RootLayout() {
       </main>
 
       <Footer />
-    </>
+    </RetailContextProvider>
   );
 }
