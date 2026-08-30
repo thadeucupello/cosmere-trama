@@ -7,6 +7,7 @@ import './styles/header.css';
 import './styles/sections.css';
 import './styles/mobile-fixes.css';
 import './styles/retail.css';
+import './styles/home-refinement-preview.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
