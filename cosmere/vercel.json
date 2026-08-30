@@ -11,6 +11,6 @@
     { "source": "/arquivos/o-que-e-a-cosmere", "destination": "/arquivos/o-que-e-a-cosmere.html" },
     { "source": "/arquivos/mistborn-guia-scadrial", "destination": "/arquivos/mistborn-guia-scadrial.html" },
     { "source": "/arquivos/roshar-guia-sem-spoilers", "destination": "/arquivos/roshar-guia-sem-spoilers.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
