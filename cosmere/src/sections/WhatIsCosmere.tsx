@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import { worlds, orbitCompanionWorlds } from '../data/worlds';
 import { books } from '../data/books';
@@ -42,15 +42,6 @@ const orbitEntries: OrbitEntry[] = [
 
 export default function WhatIsCosmere() {
   const [activeWorld, setActiveWorld] = useState<OrbitEntry | null>(null);
-  const navigate = useNavigate();
-
-  const handleSelect = (entry: OrbitEntry) => {
-    if (entry.kind === 'primary') {
-      navigate(`/${entry.id}`);
-    } else {
-      setActiveWorld(entry);
-    }
-  };
 
   const relatedBook = activeWorld?.relatedBookId ? books.find((b) => b.id === activeWorld.relatedBookId) : undefined;
 
@@ -66,85 +57,98 @@ export default function WhatIsCosmere() {
           />
         </div>
 
-        <div className="cosmere-map__orbit-wrap">
-          <div className="cosmere-orbit" role="group" aria-label="Mapa dos mundos da Cosmere">
-            <div className="cosmere-orbit__core" aria-hidden="true" />
+        <div className="cosmere-map__experience">
+          <div className="cosmere-map__orbit-wrap">
+            <div className="cosmere-orbit" role="group" aria-label="Mapa dos mundos da Cosmere">
+              <div className="cosmere-orbit__core" aria-hidden="true" />
 
-            {orbitEntries.map((entry) => {
-              const rad = (entry.angle * Math.PI) / 180;
-              const x = 50 + entry.radius * Math.cos(rad);
-              const y = 50 + entry.radius * Math.sin(rad) * 0.6;
-              return (
-                <button
-                  key={entry.id}
-                  type="button"
-                  className={`cosmere-orbit__planet cosmere-orbit__planet--${entry.kind}`}
-                  style={{
-                    left: `${x}%`,
-                    top: `${y}%`,
-                    // @ts-expect-error custom property
-                    '--planet-accent': entry.accent,
-                  }}
-                  aria-label={`${entry.name}: ${entry.teaser}`}
-                  aria-expanded={activeWorld?.id === entry.id}
-                  onMouseEnter={() => setActiveWorld(entry)}
-                  onFocus={() => setActiveWorld(entry)}
-                  onClick={() => handleSelect(entry)}
-                >
-                  <span className="cosmere-orbit__dot" />
-                  <span className="cosmere-orbit__label">{entry.name}</span>
-                </button>
-              );
-            })}
+              {orbitEntries.map((entry) => {
+                const rad = (entry.angle * Math.PI) / 180;
+                const x = 50 + entry.radius * Math.cos(rad);
+                const y = 50 + entry.radius * Math.sin(rad) * 0.6;
+                return (
+                  <button
+                    key={entry.id}
+                    type="button"
+                    className={`cosmere-orbit__planet cosmere-orbit__planet--${entry.kind}`}
+                    style={{
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      // @ts-expect-error custom property
+                      '--planet-accent': entry.accent,
+                    }}
+                    aria-label={`${entry.name}: ${entry.teaser}`}
+                    aria-pressed={activeWorld?.id === entry.id}
+                    onMouseEnter={() => setActiveWorld(entry)}
+                    onFocus={() => setActiveWorld(entry)}
+                    onClick={() => setActiveWorld(entry)}
+                  >
+                    <span className="cosmere-orbit__dot" />
+                    <span className="cosmere-orbit__label">{entry.name}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <p className="cosmere-map__statement">
-          Na Cosmere, cada livro conta uma história. Juntos, eles formam um universo.
-        </p>
-
-        <div className="cosmere-tooltip" role="status" aria-live="polite">
-          {activeWorld ? (
-            <motion.div
-              key={activeWorld.id}
-              className={relatedBook ? 'cosmere-tooltip__card' : undefined}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {relatedBook?.cover && (
-                <img
-                  src={relatedBook.cover}
-                  alt={`Capa de ${relatedBook.title}`}
-                  className="cosmere-tooltip__cover"
-                  loading="lazy"
-                />
-              )}
-              <div className="cosmere-tooltip__copy">
-                <h3 className="cosmere-tooltip__name" style={{ color: activeWorld.accent }}>
+          <div className="cosmere-map__panel" role="status" aria-live="polite">
+            {activeWorld ? (
+              <motion.div
+                key={activeWorld.id}
+                className="cosmere-map__panel-content"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.28 }}
+              >
+                <span className="cosmere-map__panel-eyebrow">Mundo da Cosmere</span>
+                <h3 className="cosmere-map__panel-title" style={{ color: activeWorld.accent }}>
                   {activeWorld.name}
                 </h3>
-                <p className="cosmere-tooltip__description">{activeWorld.teaser}</p>
-                {relatedBook && (
-                  <Link to={`/projetos-secretos#${relatedBook.id}`} className="btn btn-ghost cosmere-tooltip__cta">
+                <p className="cosmere-map__panel-copy">{activeWorld.teaser}</p>
+
+                {relatedBook?.cover && (
+                  <div className="cosmere-map__panel-book">
+                    <img
+                      src={relatedBook.cover}
+                      alt={`Capa de ${relatedBook.title}`}
+                      className="cosmere-tooltip__cover"
+                      loading="lazy"
+                    />
+                    <div>
+                      <span className="cosmere-map__panel-book-label">Leia este mundo em</span>
+                      <strong>{relatedBook.title}</strong>
+                    </div>
+                  </div>
+                )}
+
+                {activeWorld.kind === 'primary' ? (
+                  <Link to={`/${activeWorld.id}`} className="btn btn-ghost cosmere-map__panel-action">
+                    Explorar {activeWorld.name}
+                  </Link>
+                ) : relatedBook ? (
+                  <Link to={`/projetos-secretos#${relatedBook.id}`} className="btn btn-ghost cosmere-map__panel-action">
                     Conhecer {relatedBook.title}
                   </Link>
-                )}
+                ) : null}
+              </motion.div>
+            ) : (
+              <div className="cosmere-map__panel-content cosmere-map__panel-content--intro">
+                <span className="cosmere-map__panel-eyebrow">Mundos conectados</span>
+                <p className="cosmere-map__statement">
+                  Na Cosmere, cada livro conta uma história. Juntos, eles formam um universo.
+                </p>
+                <span className="cosmere-map__panel-hint">Passe o mouse ou toque em um mundo para conhecê-lo.</span>
               </div>
-            </motion.div>
-          ) : (
-            <span className="cosmere-tooltip__hint">Toque ou passe o mouse sobre um mundo para conhecê-lo.</span>
-          )}
-        </div>
+            )}
 
-        <div className="cosmere-map__cta">
-          <button
-            type="button"
-            className="btn btn-ghost"
-            onClick={() => document.getElementById('mundos')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Explorar os mundos
-          </button>
+            <button
+              type="button"
+              className="btn btn-ghost cosmere-map__all-worlds"
+              onClick={() => document.getElementById('mundos')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Explorar os mundos
+            </button>
+          </div>
         </div>
       </div>
     </section>
