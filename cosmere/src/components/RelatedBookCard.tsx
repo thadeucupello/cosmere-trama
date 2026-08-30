@@ -1,4 +1,5 @@
 import type { Book } from '../types';
+import BookPurchaseAction from './BookPurchaseAction';
 
 const statusLabel: Record<Book['status'], string> = {
   published: 'Publicado',
@@ -27,13 +28,7 @@ export default function RelatedBookCard({ book }: Props) {
       <div className="related-book-card__content">
         <p>{book.series}</p>
         <h3>{book.title}</h3>
-        {book.purchaseUrl ? (
-          <a href={book.purchaseUrl} target="_blank" rel="noreferrer">
-            Ver na loja da Trama
-          </a>
-        ) : (
-          <small>Link oficial em preparação.</small>
-        )}
+        <BookPurchaseAction book={book} compact />
       </div>
     </article>
   );
