@@ -30,8 +30,6 @@ export default function BookPurchaseAction({ book, compact = false }: Props) {
     );
   }
 
-  const locationLabel = [retail.storeName, retail.unitName].filter(Boolean).join(' — ');
-
   return (
     <div className={`retail-purchase ${compact ? 'retail-purchase--compact' : ''}`}>
       <button
@@ -45,11 +43,8 @@ export default function BookPurchaseAction({ book, compact = false }: Props) {
 
       {open && (
         <div className="retail-purchase__panel" role="status">
-          <strong>Encontre este livro aqui</strong>
-          <p>
-            Procure <em>{book.title}</em>{locationLabel ? ` na ${locationLabel}` : ' nesta livraria'}.
-            Se precisar, mostre esta tela a um atendente.
-          </p>
+          <strong>Quero este livro</strong>
+          <p>Procure este título nesta livraria ou mostre esta tela a um atendente.</p>
         </div>
       )}
     </div>
