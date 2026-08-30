@@ -59,7 +59,7 @@ export default function WhatIsCosmere() {
       <div className="container cosmere-map__grid">
         <div className="cosmere-map__intro">
           <SectionHeading
-            align="center"
+            align="left"
             eyebrow="O universo"
             title="O que é a Cosmere?"
             subtitle="A Cosmere é o universo compartilhado que abriga grande parte das histórias de Brandon Sanderson. Cada saga acontece em um mundo diferente e pode ser lida de forma independente. Aos poucos, conexões entre mundos, personagens e histórias começam a aparecer."
