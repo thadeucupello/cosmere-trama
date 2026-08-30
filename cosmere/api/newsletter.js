@@ -10,12 +10,19 @@ function safeString(value, maxLength = 180) {
 export default async function handler(request, response) {
   response.setHeader('Cache-Control', 'no-store');
 
+  const apiKey = process.env.RD_STATION_API_KEY;
+
+  if (request.method === 'GET') {
+    return apiKey
+      ? response.status(200).json({ ok: true, service: 'newsletter' })
+      : response.status(503).json({ ok: false, code: 'configuration_missing' });
+  }
+
   if (request.method !== 'POST') {
-    response.setHeader('Allow', 'POST');
+    response.setHeader('Allow', 'GET, POST');
     return response.status(405).json({ ok: false, code: 'method_not_allowed' });
   }
 
-  const apiKey = process.env.RD_STATION_API_KEY;
   if (!apiKey) {
     return response.status(503).json({ ok: false, code: 'configuration_missing' });
   }
