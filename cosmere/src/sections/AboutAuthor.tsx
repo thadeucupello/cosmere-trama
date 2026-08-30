@@ -34,6 +34,8 @@ export default function AboutAuthor() {
             className="about-author__portrait-image"
             width={800}
             height={1000}
+            loading="lazy"
+            decoding="async"
           />
         </motion.div>
 
