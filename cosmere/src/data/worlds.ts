@@ -38,16 +38,15 @@ export const worlds: World[] = [
 ];
 
 // Companion worlds shown in the "What is the Cosmere" orbit that don't have
-// a full dedicated page of their own — each is tied to one published Secret
-// Project book instead. Clicking one shows an inline preview (cover + link
-// to that book) rather than navigating away, since there's no separate
-// /lumar, /komashi or /canticle route.
+// a full dedicated page of their own. Some are tied to a published Secret
+// Project book; others, like Sel, appear as contextual worlds without a
+// dedicated route or catalog link yet.
 export interface OrbitCompanionWorld {
   id: string;
   name: string;
   teaser: string;
   accent: string;
-  relatedBookId: string;
+  relatedBookId?: string;
 }
 
 export const orbitCompanionWorlds: OrbitCompanionWorld[] = [
@@ -74,6 +73,13 @@ export const orbitCompanionWorlds: OrbitCompanionWorld[] = [
       'Um ambiente extremo, onde a luz do sol é uma ameaça constante e seus habitantes nunca podem parar de se mover — o palco de O Homem Iluminado.',
     accent: '#A8433A',
     relatedBookId: 'secret-project-4',
+  },
+  {
+    id: 'sel',
+    name: 'Sel',
+    teaser:
+      'Um mundo marcado por antigas civilizações e por uma magia profundamente ligada à geografia. É aqui que fica Elantris, a lendária cidade dos deuses.',
+    accent: '#D6B76A',
   },
 ];
 
