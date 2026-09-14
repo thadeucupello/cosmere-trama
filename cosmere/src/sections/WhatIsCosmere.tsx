@@ -33,7 +33,7 @@ const orbitEntries: OrbitEntry[] = [
     name: w.name,
     teaser: w.teaser,
     accent: w.accent,
-    angle: 45 + i * 100,
+    angle: w.id === 'sel' ? 300 : 45 + i * 100,
     radius: 62,
     kind: 'companion' as const,
     relatedBookId: w.relatedBookId,
